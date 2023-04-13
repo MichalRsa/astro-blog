@@ -8,7 +8,7 @@ export const TechnologiesSection = ({
   techIcons: typeof data.techIcons;
 }): ReactElement => {
   return (
-    <div>
+    <section>
       <SectionTitle title="Technologies I used in comercial projects" />
       <ul className="flex flex-wrap justify-center items-stretch w-full m-auto">
         {techIcons.map((icon, index) => (
@@ -26,6 +26,6 @@ export const TechnologiesSection = ({
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };

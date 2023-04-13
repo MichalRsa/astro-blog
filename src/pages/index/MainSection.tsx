@@ -7,7 +7,7 @@ export const MainSection = ({
   favIcons: typeof data.favIcons;
 }): ReactElement => {
   return (
-    <div className="flex flex-col self-stretch max-w-full z-10">
+    <section className="flex flex-col self-stretch max-w-full z-10">
       <div className="rounded-3xl md:bg-slate-100 md:pr-6 md:p-8 lg:min-w-[460px] sm:min-w-[276px] md:mr-[-150px] lg:mr-0">
         <h1 className="lg:mb-16 lg:text-5xl mb-2 text-2xl font-bold">
           Hi! I am <br />
@@ -37,6 +37,6 @@ export const MainSection = ({
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };

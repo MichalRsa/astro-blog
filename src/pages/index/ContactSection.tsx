@@ -8,7 +8,7 @@ export const ContactSection = ({
   socialIcons: typeof data.socialIcons;
 }): ReactElement => {
   return (
-    <div>
+    <section>
       <SectionTitle title="Find me on" />
       <ul className="flex flex-wrap justify-center items-stretch md:w-10/12 w-full m-auto">
         {socialIcons.map((icon, index) => (
@@ -26,6 +26,6 @@ export const ContactSection = ({
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
