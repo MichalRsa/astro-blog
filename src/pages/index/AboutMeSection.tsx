@@ -3,7 +3,7 @@ import { SectionTitle } from "../../components/SectionTitle.tsx";
 
 export const AboutMeSection = (): ReactElement => {
   return (
-    <section>
+    <section id="about-me">
       <SectionTitle title="About Me" />
       <p>Self-taught Web Developer,</p>
       <br />
