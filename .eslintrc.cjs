@@ -14,9 +14,14 @@ module.exports = {
     {
       files: ["*.tsx", "*.ts"],
 
-      extends: ["plugin:react/recommended", "standard-with-typescript", "prettier"],
+      extends: [
+        "plugin:react/recommended",
+        "standard-with-typescript",
+        "prettier",
+      ],
       rules: {
         // add any additional rules specific to .ts files
+        "react/react-in-jsx-scope": "off",
       },
     },
     {
@@ -43,5 +48,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: {},
+  rules: {
+    "no-console": 1,
+  },
 };
