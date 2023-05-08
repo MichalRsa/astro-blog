@@ -2,9 +2,9 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import { MainSection } from "./index/MainSection.tsx";
 import { ContactSection } from "./index/ContactSection.tsx";
-import { TechnologiesSection } from "./index/TechnologiesSection.tsx";
 import { AboutMeSection } from "./index/AboutMeSection.tsx";
 import { data } from "../consts.ts";
+import { Timeline } from "./index/Timeline.jsx";
 ---
 
 <MainLayout title="michalrosa.dev" description="michalrosas.dev - main page">
@@ -20,7 +20,7 @@ import { data } from "../consts.ts";
       </div>
     </div>
     <AboutMeSection />
-    <TechnologiesSection techIcons={data.techIcons} />
+    <Timeline />
     <ContactSection socialIcons={data.socialIcons} />
   </div>
 </MainLayout>
