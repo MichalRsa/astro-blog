@@ -1,29 +1,28 @@
+---
+const links = [
+  {
+    label: "about me",
+    url: "/",
+  },
+  {
+    label: "blog",
+    url: "/blog",
+  },
+];
+---
+
 <header>
   <nav>
     <div class="flex justify-between px-12 py-6 w-full absolute box-border">
       <p>MR</p>
       <ul class="flex">
-        <a href="#about-me">
-          <li
-            class="ml-6 hover:underline hover:decoration-2 hover:underline-offset-8"
-          >
-            ABOUT ME
-          </li>
-        </a>
-        <a href="#timeline">
-          <li
-            class="ml-6 hover:underline hover:decoration-2 hover:underline-offset-8"
-          >
-            TIMELINE
-          </li>
-        </a>
-        <a href="#find-me">
-          <li
-            class="ml-6 hover:underline hover:decoration-2 hover:underline-offset-8"
-          >
-            FIND ME
-          </li>
-        </a>
+        {
+          links.map((link) => (
+            <li class="ml-6 hover:underline hover:decoration-2 hover:underline-offset-8 uppercase">
+              <a href={link.url}>{link.label}</a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </nav>
