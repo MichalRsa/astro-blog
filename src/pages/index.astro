@@ -5,9 +5,13 @@ import { ContactSection } from "./index/ContactSection.tsx";
 import { AboutMeSection } from "./index/AboutMeSection.tsx";
 import { data } from "../consts.ts";
 import { Timeline } from "./index/Timeline.jsx";
+
+const title = "Michał Rosa Fullstack developer | Home";
+const description =
+  "Michał Rosa is a Fullstack developer, with commercial experience in making web apps using technologies like React.js, Node.js, and Express.js";
 ---
 
-<MainLayout title="michalrosa.dev" description="michalrosas.dev - main page">
+<MainLayout title={title} description={description}>
   <div class="mx-auto 2xl:px-72 sm:px-24 md:px-12 px-2 text-gray-600">
     <div
       class="md:h-screen md:min-h-[840px] items-start flex md:flex-row flex-col sm:py-24 pt-24 pb-16 gap-x-4 justify-center"
