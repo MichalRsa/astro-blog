@@ -1,13 +1,48 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import BigArticleCard from "../../components/BigArticleCard.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
 
 const title = "Michał Rosa Fullstack developer | Blog";
 const description =
   "Michał Rosa is a Fullstack developer, with commercial experience in making web apps using technologies like React.js, Node.js, and Express.js";
+
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+
+const newestPost = posts[0];
 ---
 
 <MainLayout title={title} description={description}>
-  <div>
-    <p>blog</p>
-  </div>
+  <section class="container lg:max-w-screen-lg mx-auto px-12 lg:px-0">
+    {
+      newestPost && (
+        <BigArticleCard
+          heroImage={newestPost?.data.heroImage}
+          slug={newestPost.slug}
+          title={newestPost.data.title}
+          pubData={newestPost.data.pubDate}
+          description={newestPost.data.description}
+        />
+      )
+    }
+    <ul class="flex flex-wrap">
+      {
+        posts.map((post) => (
+          <li class="w-full md:w-1/2 px-2 mb-6 md:mb-12">
+            <ArticleCard
+              heroImage={post.data.heroImage}
+              slug={post.slug}
+              title={post.data.title}
+              pubData={post.data.pubDate}
+              description={post.data.description}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </MainLayout>
