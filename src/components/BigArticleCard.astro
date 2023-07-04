@@ -1,9 +1,14 @@
 ---
 const { pubDate, title, description, slug, heroImage } = Astro.props;
+
+const absoluteSlug = `/blog/${slug}`;
 ---
 
 <article class="flex h-screen">
-  <a href={slug} class="flex flex-row container md:h-96 h-64 max-w-6xl my-auto">
+  <a
+    href={absoluteSlug}
+    class="flex flex-row container md:h-96 h-64 max-w-6xl my-auto"
+  >
     <div class="w-7/12 overflow-hidden rounded-2xl">
       <img class="h-full w-full object-cover" src={heroImage} />
     </div>
