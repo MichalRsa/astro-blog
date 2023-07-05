@@ -1,9 +1,18 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE =
-  "Michal Rosa. I'm web developer. That's my personal website where I want to share some knowledge.";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+const BASE_TITLE = "Michał Rosa Fullstack developer | ";
+
+export const TITLE = {
+  HOME: BASE_TITLE + "Home",
+  BLOG: BASE_TITLE + "Blog",
+  BLOG_POST: (description: string) => BASE_TITLE + description,
+};
+
+export const DESCRIPTION = {
+  HOME: "Michał Rosa is a Fullstack developer, with commercial experience in making web apps using technologies like React.js, Node.js, and Express.js",
+  BLOG: "Welcome to my blog! As a web developer proficient in JavaScript, TypeScript, React.js and Node.js. I share insightful articles, tutorials, and tips on these topics. Stay updated with the latest web development trends and learn how to leverage these technologies to build robust and efficient applications.",
+};
 
 export const data = {
   socialIcons: [

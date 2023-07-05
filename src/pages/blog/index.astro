@@ -2,10 +2,10 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import BigArticleCard from "../../components/BigArticleCard.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import { TITLE, DESCRIPTION } from "../../consts.ts";
 
-const title = "Michał Rosa Fullstack developer | Blog";
-const description =
-  "Michał Rosa is a Fullstack developer, with commercial experience in making web apps using technologies like React.js, Node.js, and Express.js";
+const title = TITLE.BLOG;
+const description = DESCRIPTION.BLOG;
 
 import { getCollection } from "astro:content";
 
