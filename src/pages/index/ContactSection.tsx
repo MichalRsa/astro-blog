@@ -14,7 +14,7 @@ export const ContactSection = ({
         {socialIcons.map((icon, index) => (
           <li key={index} className="sm:m-2">
             <a target="_blank" href={icon.link} rel="noreferrer">
-              <div className="px-12 py-8 h-full hover:bg-slate-50 rounded-3xl flex items-center">
+              <div className="px-12 py-8 h-full hover:bg-orange-400 hover:bg-opacity-20 rounded-3xl flex items-center">
                 <img
                   src={`/${icon.src}`}
                   alt={`${icon.alt} icon`}
