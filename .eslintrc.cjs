@@ -7,6 +7,7 @@ module.exports = {
     // "plugin:react/recommended",
     // "standard-with-typescript",
     // "plugin:astro/recommended",
+    "plugin:jsx-a11y/recommended",
     "prettier",
   ],
   // ignorePatterns: ['*.astro'],
@@ -28,6 +29,7 @@ module.exports = {
       // Define the configuration for `.astro` file.
       files: ["*.astro"],
       // Allows Astro components to be parsed.
+      extends: ["plugin:astro/recommended"],
       parser: "astro-eslint-parser",
       // Parse the script in `.astro` as TypeScript by adding the following configuration.
       // It's the setting you need when using TypeScript.
