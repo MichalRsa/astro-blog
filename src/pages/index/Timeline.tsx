@@ -21,7 +21,7 @@ export const Timeline = (): ReactElement => {
                 <h2 className="text-xl font-semibold tracking-wide">
                   First commit pushed to Github
                 </h2>
-                <time className="text-xs tracking-wide uppercase dark:text-gray-400">
+                <time className="text-xs tracking-wide uppercase dark:text-gray-500">
                   Dec 2020
                 </time>
                 <p className="mt-3">
@@ -47,7 +47,7 @@ export const Timeline = (): ReactElement => {
                     Sky Gate
                   </a>
                 </h2>
-                <time className="text-xs tracking-wide uppercase dark:text-gray-400">
+                <time className="text-xs tracking-wide uppercase dark:text-gray-500">
                   Nov 2021 - Oct 2022
                 </time>
                 <p className="mt-3">
@@ -84,7 +84,7 @@ export const Timeline = (): ReactElement => {
                     Brainhub
                   </a>
                 </h2>
-                <time className="text-xs tracking-wide uppercase dark:text-gray-400">
+                <time className="text-xs tracking-wide uppercase dark:text-gray-500">
                   Nov 2022 - Currently
                 </time>
                 <p className="mt-3">

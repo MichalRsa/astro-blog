@@ -22,8 +22,8 @@ export const data = {
       link: "https://www.linkedin.com/in/rosa-michal/",
     },
     {
-      src: "twitter.webp",
-      alt: "twitter icon",
+      src: "x-logo.webp",
+      alt: "x icon",
       link: "https://twitter.com/Michal__Rsa",
     },
     {
