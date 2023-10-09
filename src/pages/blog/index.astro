@@ -31,7 +31,7 @@ const newestPost = posts[0];
     }
     <ul class="flex flex-wrap">
       {
-        posts.map((post) => (
+        posts.slice(1).map((post) => (
           <li class="w-full md:w-1/2 px-2 mb-6 md:mb-12">
             <ArticleCard
               heroImage={post.data.heroImage}

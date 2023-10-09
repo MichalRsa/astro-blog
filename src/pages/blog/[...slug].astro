@@ -22,12 +22,12 @@ const title = TITLE.BLOG_POST(post.data.title);
 <MainLayout title={title} description={post.data.description}>
   <div>
     <article>
-      <div class="container mx-auto lg:max-w-screen-md p-2">
+      <div class="prose container mx-auto lg:max-w-screen-md p-2">
         <header>
           <div class="flex pt-16">
             <div class="flex flex-col my-auto w-full h-4/6">
-              <h2 class="text-4xl font-bold p-8 pl-0.5">{post.data.title}</h2>
-              <div class="overflow-hidden max-h-96 rounded-2xl">
+              <h2 class="text-4xl font-bold pt-8 pl-0.5">{post.data.title}</h2>
+              <div class="overflow-hidden rounded-2xl">
                 <img
                   class="h-full w-full object-cover"
                   src={post.data.heroImage}
