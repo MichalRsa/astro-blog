@@ -1,16 +1,12 @@
 ---
-const navList = [
+const links = [
   {
-    name: "ABOUT ME",
-    link: "#about-me",
+    label: "about me",
+    url: "/",
   },
   {
-    name: "TIMELINE",
-    link: "#timeline",
-  },
-  {
-    name: "FIND ME",
-    link: "#find-me",
+    label: "blog",
+    url: "/blog/",
   },
 ];
 ---
@@ -21,9 +17,9 @@ const navList = [
       <img width="25" height="25" src="/MR.png" alt="logo" />
       <ul class="flex">
         {
-          navList.map((navElement) => (
-            <li class="ml-6 hover:underline hover:underline-offset-8">
-              <a href={navElement.link}>{navElement.name}</a>
+          links.map((link) => (
+            <li class="ml-6 hover:underline hover:decoration-2 hover:underline-offset-8 uppercase">
+              <a href={link.url}>{link.label}</a>
             </li>
           ))
         }
