@@ -2,7 +2,8 @@
 title: "How to prepare for AWS developer associate exam"
 description: "As I earned my first cloud certification recently, I'm looking back at my approach with a fresh perspective and some valuable lessons. So, in this blog post, I'm going to take you through how I started, open up on what worked for me, and chat about the changes I'd make if I had to do it all over again."
 pubDate: "Oct 09 2023"
-heroImage: "/blog/aws-dev-badge.jpg"
+heroImage: "/blog/aws-dev-badge.webp"
+imgAlt: "AWS developer badge"
 ---
 
 As I earned my first cloud certification recently, I'm looking back at my approach with a fresh perspective and some valuable lessons. So, in this blog post, I'm going to take you through how I started, open up on what worked for me, and chat about the changes I'd make if I had to do it all over again.
@@ -10,15 +11,17 @@ As I earned my first cloud certification recently, I'm looking back at my approa
 ### TL;DR
 
 Stephane Mareek's - [Ultimate AWS Certified Developer Associate 2023 NEW DVA-C02](https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/) and
-[https://www.udemy.com/course/aws-certified-developer-associate-practice-tests-dva-c01/](https://www.udemy.com/course/aws-certified-developer-associate-practice-tests-dva-c01/)
+[Practice Exams | AWS Certified Developer Associate 2023](https://www.udemy.com/course/aws-certified-developer-associate-practice-tests-dva-c01/)
 
 Tutorials Dojo practice exams - [AWS Certified Developer Associate DVA-C02 Practice Exams 2023](https://portal.tutorialsdojo.com/courses/aws-certified-developer-associate-practice-exams/)
 
 These resources are enough to pass the exam confidently. Just go through Stepahne's course. Then, take preparation exams (go through failed questions) and retake failed exams.
 
-### Time
+### Preparation time
 
 So, I underestimated the time needed for proper preparation. I watched multiple videos where people were telling me that they prepared for it in 3-4 weeks. However, I didn't take into consideration that they already passed at least one AWS exam. Ultimately, I needed almost three months to feel confident (almost) enough to attempt the exam.
+
+With no prior experience in cloud services, I would propose at least two months for preparation.
 
 ### Confidence
 
@@ -28,13 +31,11 @@ In my perspective, the exam questions tend to be so complex that you are rarely 
 
 In the beginning, I completely wasted my time trying to mindlessly note the lessons in my Obsidian app and never go back to repeat the information.
 
-If learning the second time for the exam I would take the approach of freely going through Stephane's Udemy lessons, not memorizing everything. But grasping ideas behind some of the services. And use a noting technique called mind mapping (see example [here](https://www.youtube.com/watch?v=o1WhjPh3ZQ4)). It's a good tool to help memorize AWS services and their connections. Having a visual representation of the whole AWS infrastructure helps you visualize the ecosystem and allows you to find a proper place in the official documentation when you need to deepen your knowledge. If you know how this stuff works together, then you have to memorize all these properties like deployment modes or DynamoDB throughout. Despite this questions are not often on the exam I would not attempt it without this knowledge.
+If learning the second time for the exam I would take the approach of freely going through Stephane's Udemy lessons, not memorizing everything. But grasping ideas behind some of the services. [And use a noting technique called mind mapping ](https://www.youtube.com/watch?v=o1WhjPh3ZQ4)). It's a good tool to help memorize AWS services and their connections. Having a visual representation of the whole AWS infrastructure helps you visualize the ecosystem and allows you to find a proper place in the official documentation when you need to deepen your knowledge. If you know how this stuff works together, then you have to memorize all these properties like deployment modes or DynamoDB throughout. Despite this questions are not often on the exam I would not attempt it without this knowledge.
 
 ### Taking practice exams
 
-When having an idea of how the AWS ecosystem works. You can start to take practice exams. By far that's the most important step. Take a singular exam and go through the wrong and good answers, then dig into the docs. If done properly, it takes a day or more.
-
-It is the most important step, I would spend at least two weeks going through the practice exams, and explanation of the questions.
+When having an idea of how the AWS ecosystem works. You can start to take practice exams. By far that's the most important step. Take a singular exam and go through the wrong and good answers, then dig into the docs, and go back to the course lessons. If done properly, it takes a day or more. It is a good idea to schedule the last two/three weeks solely for practice exams.
 
 ### What practice exams did I take?
 

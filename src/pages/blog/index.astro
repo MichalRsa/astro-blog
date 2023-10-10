@@ -22,6 +22,7 @@ const newestPost = posts[0];
       newestPost && (
         <BigArticleCard
           heroImage={newestPost?.data.heroImage}
+          imgAlt={newestPost.data.imgAlt}
           slug={newestPost.slug}
           title={newestPost.data.title}
           pubData={newestPost.data.pubDate}
@@ -35,6 +36,7 @@ const newestPost = posts[0];
           <li class="w-full md:w-1/2 px-2 mb-6 md:mb-12">
             <ArticleCard
               heroImage={post.data.heroImage}
+              imgAlt={post.data.imgAlt}
               slug={post.slug}
               title={post.data.title}
               pubData={post.data.pubDate}

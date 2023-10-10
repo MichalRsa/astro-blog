@@ -1,5 +1,5 @@
 ---
-const { pubDate, title, description, slug, heroImage } = Astro.props;
+const { pubDate, title, description, slug, heroImage, imgAlt } = Astro.props;
 
 const absoluteSlug = `/blog/${slug}`;
 ---
@@ -10,7 +10,7 @@ const absoluteSlug = `/blog/${slug}`;
     class="flex flex-row container md:h-96 h-64 max-w-6xl my-auto"
   >
     <div class="w-7/12 overflow-hidden rounded-2xl">
-      <img class="h-full w-full object-cover" src={heroImage} />
+      <img class="h-full w-full object-cover" src={heroImage} alt={imgAlt} />
     </div>
     <div class="flex justify flex-col p-8 w-5/12">
       <p class="text-xs font-thin pb-8">{pubDate}</p>
