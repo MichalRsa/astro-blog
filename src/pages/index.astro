@@ -3,12 +3,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 import { MainSection } from "./index/MainSection.tsx";
 import { ContactSection } from "./index/ContactSection.tsx";
 import { AboutMeSection } from "./index/AboutMeSection.tsx";
-import { data } from "../consts.ts";
+import { data, TITLE, DESCRIPTION } from "../consts.ts";
 import { Timeline } from "./index/Timeline.jsx";
 
-const title = "Michał Rosa Fullstack developer | Home";
-const description =
-  "Michał Rosa is a Fullstack developer, with commercial experience in making web apps using technologies like React.js, Node.js, and Express.js";
+const title = TITLE.HOME;
+const description = DESCRIPTION.HOME;
 ---
 
 <MainLayout title={title} description={description}>
