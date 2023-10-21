@@ -25,7 +25,7 @@ _A Predictable State Container for JS Apps_
 
 These three pieces are enough to create redux store.
 
-```
+```js
 // main.js
 import { createStore } from "redux";
 
