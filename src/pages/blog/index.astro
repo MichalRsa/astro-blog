@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import BigArticleCard from "../../components/BigArticleCard.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
+import { ArticleCard } from "../../components/ArticleCard.tsx";
 import { TITLE, DESCRIPTION } from "../../consts.ts";
 
 const title = TITLE.BLOG;
@@ -39,7 +39,7 @@ const newestPost = posts[0];
               imgAlt={post.data.imgAlt}
               slug={post.slug}
               title={post.data.title}
-              pubData={post.data.pubDate}
+              pubDate={post.data.pubDate}
               description={post.data.description}
             />
           </li>
