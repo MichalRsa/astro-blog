@@ -35,9 +35,9 @@ export const ArticleCard = ({
         </div>
 
         <div className="p-4 flex flex-col justify-start xxlmin:w-1/2 xxlmax:w-full md:h-64 h-auto">
-          <p className="text-xs font-thin pb-4">{date}</p>
-          <h2 className="text-lg font-bold pb-8">{title}</h2>
-          <p className="test-base font-light pb-8">{description}</p>
+          <p className="pb-4 text-xs font-thin ">{date}</p>
+          <h2 className="pb-8 text-lg font-bold">{title}</h2>
+          <p className="pb-8 test-base font-light">{description}</p>
         </div>
       </a>
     </article>
