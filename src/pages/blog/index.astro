@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import BigArticleCard from "../../components/BigArticleCard.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
+import { BigArticleCard } from "../../components/BigArticleCard.tsx";
+import { ArticleCard } from "../../components/ArticleCard.tsx";
 import { TITLE, DESCRIPTION } from "../../consts.ts";
 
 const title = TITLE.BLOG;
@@ -18,33 +18,37 @@ const newestPost = posts[0];
 
 <MainLayout title={title} description={description}>
   <section class="container lg:max-w-screen-lg mx-auto px-12 lg:px-0">
-    {
-      newestPost && (
-        <BigArticleCard
-          heroImage={newestPost?.data.heroImage}
-          imgAlt={newestPost.data.imgAlt}
-          slug={newestPost.slug}
-          title={newestPost.data.title}
-          pubData={newestPost.data.pubDate}
-          description={newestPost.data.description}
-        />
-      )
-    }
-    <ul class="flex flex-wrap">
+    <ul>
       {
-        posts.slice(1).map((post) => (
-          <li class="w-full md:w-1/2 px-2 mb-6 md:mb-12">
-            <ArticleCard
-              heroImage={post.data.heroImage}
-              imgAlt={post.data.imgAlt}
-              slug={post.slug}
-              title={post.data.title}
-              pubData={post.data.pubDate}
-              description={post.data.description}
+        newestPost && (
+          <li class="w-full px-2 mb-6">
+            <BigArticleCard
+              heroImage={newestPost?.data.heroImage}
+              imgAlt={newestPost.data.imgAlt}
+              slug={newestPost.slug}
+              title={newestPost.data.title}
+              pubDate={newestPost.data.pubDate}
+              description={newestPost.data.description}
             />
           </li>
-        ))
+        )
       }
+      <div class="flex-wrap flex">
+        {
+          posts.slice(1).map((post) => (
+            <li class="w-full md:w-1/2 px-2 mb-6 md:mb-12">
+              <ArticleCard
+                heroImage={post.data.heroImage}
+                imgAlt={post.data.imgAlt}
+                slug={post.slug}
+                title={post.data.title}
+                pubDate={post.data.pubDate}
+                description={post.data.description}
+              />
+            </li>
+          ))
+        }
+      </div>
     </ul>
   </section>
 </MainLayout>
