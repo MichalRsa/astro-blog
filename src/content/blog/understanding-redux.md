@@ -322,10 +322,6 @@ export const SUBTRACT = "subtract";
 export const UPDATE_USER = "updateUser";
 ```
 
-### Action creators
-
-Action creator is simply the function that returns the action object. So we can use the function everywhere we want to dispatch it without the need to write the whole object in multiple places.
-
 ```js {9}
 // actions.js
 import { INCREMENT, DECREMENT, ADD, SUBTRACT, UPDATE_USER } from "./consts.js";
