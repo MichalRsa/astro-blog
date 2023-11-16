@@ -19,12 +19,12 @@ export const ArticleCard = ({
   const absoluteSlug = `/blog/${slug}`;
 
   return (
-    <article>
+    <article className="h-full">
       <a
-        className="flex flex-col transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md rounded-2xl"
+        className="flex flex-col h-full transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md rounded-2xl"
         href={absoluteSlug}
       >
-        <div className="w-full h-full overflow-hidden rounded-2xl">
+        <div className="overflow-hidden rounded-2xl">
           <img
             className="min-w-full min-h-full object-cover"
             src={heroImage}
