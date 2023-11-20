@@ -10,7 +10,7 @@ imgAlt: "Redux logo"
 
 In the previous article, we learned about the basic concepts of redux. We created a store, updated the state, and read the state. In this article, we will learn about middleware and thunks. We will use them to make requests to the mocked API.
 
-**Thunks are not necessary for async calls in redux**, but they allow us to pass not only action objects but also thunk functions to the `store.dispatch()` method. It unifies how we create action creators and thunk action creators
+**Thunks are not necessary for async calls in redux**, but they allow us to pass not only action objects but also thunk functions to the `store.dispatch()` method. **It unifies how we create action creators and thunk action creators.**
 
 ## Table of contents
 
@@ -280,7 +280,7 @@ Having mocked API we can start working on thunks and async logic
 
 ## Redux thunk
 
-Now knowing how to add middleware to the store we can use thunks. Because thunks are just middleware with the same structure we introduced before.
+Now knowing how to add middleware to the store we can use thunks. Because **thunks are just middleware with the same structure we introduced before.**
 
 ### Thunk Middleware
 
@@ -428,17 +428,19 @@ export const UPDATE_USER = "updateUser";
 export const UPDATE_ACCOUNT = "updateAccount";
 ```
 
-```js {2-68}
+```js {2-70}
 // actions.js
 import axios from "axios";
 import { UPDATE_USER, UPDATE_ACCOUNT } from "./consts.js";
 
+// Action creators
 export const setUser = (user) => ({ type: UPDATE_USER, payload: user });
 export const setAccount = (account) => ({
   type: UPDATE_ACCOUNT,
   payload: account,
 });
 
+// Thunk creators
 export const getUser = (id) => {
   return async (dispatch, getState) => {
     const response = await axios.get("http://localhost:3003/users/" + id);
