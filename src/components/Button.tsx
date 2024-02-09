@@ -2,13 +2,13 @@ import type { ReactElement } from "react";
 import clsx from "clsx";
 
 interface ButtonProps {
-  text: string;
+  text?: string;
   fontSize?: string;
   classes?: string;
 }
 
 export const Button = ({
-  text,
+  text = "Let's work together",
   fontSize,
   classes,
 }: ButtonProps): ReactElement => (
