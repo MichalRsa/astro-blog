@@ -1,7 +1,10 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import { Header } from "../components/Header.tsx";
 import Footer from "../components/Footer.astro";
+
+import "@fontsource/oswald";
+import "@fontsource/roboto";
 
 const { title, description } = Astro.props;
 ---
@@ -11,7 +14,7 @@ const { title, description } = Astro.props;
     <BaseHead title={title} description={description} />
   </head>
   <body>
-    <Header />
+    <Header client:load />
     <slot />
     <Footer />
   </body>
