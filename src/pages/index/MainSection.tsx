@@ -3,7 +3,7 @@ import { Button } from "../../components/Button";
 
 export const MainSection = (): ReactElement => {
   return (
-    <section className="max-w-7xl z-10 mx-auto lg:px-12 px-2 overflow-hidden">
+    <section className="z-10 mx-auto lg:px-12 px-2 overflow-hidden">
       <div className="max-lg:relative lg:h-screen items-center lg:flex  sm:py-24 pt-24 pb-16 gap-x-4 justify-center">
         <div className="md:pr-6 md:p-8 max-[520px]:max-w-[18rem] max-lg:max-w-sm lg:min-w-[460px] sm:min-w-[276px]">
           <h1 className="lg:mb-16 lg:text-5xl mb-2 text-2xl font-bold">

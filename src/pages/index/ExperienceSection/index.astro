@@ -1,0 +1,74 @@
+---
+import { SectionTitle } from "../../../components/SectionTitle";
+import ExperienceCard from "./ExperienceCard.astro";
+
+const companies = [
+  {
+    img: "/skygate.webp",
+    companyName: "Skygate",
+    specialization: "Fullstack developer",
+    technologies: [
+      "TypeScript",
+      "Vue.js",
+      "Node.js",
+      "PostgreSQL",
+      "TypeORM",
+      "Jest",
+      "React",
+      "React Bootstrap",
+      "Formik",
+      "Material UI",
+      "React Router",
+      "CSS Modules",
+    ],
+  },
+  {
+    img: "/bh-logo.png",
+    companyName: "Brainhub",
+    specialization: "Frontend developer",
+
+    technologies: [
+      "TypeScript",
+      "Vite.js",
+      "React",
+      "Material UI",
+      "React Query",
+      "React Router",
+      "CoureUI",
+      "Formik",
+    ],
+  },
+
+  {
+    img: "/bh-logo.png",
+    companyName: "Bejamas",
+    specialization: "Frontend developer",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Contentful",
+      "Storyblok",
+    ],
+  },
+];
+---
+
+<section class="bg-ternary-200 p-12">
+  <div class="mx-auto max-w-7xl">
+    <SectionTitle title="Here I gained professional experience" />
+    <div class="flex justify-between gap-8 overflow-x-auto max-lg:-mx-12">
+      {
+        companies.map(({ img, companyName, specialization, technologies }) => (
+          <ExperienceCard
+            img={img}
+            title={companyName}
+            subTitle={specialization}
+            list={technologies}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

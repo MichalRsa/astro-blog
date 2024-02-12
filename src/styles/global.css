@@ -6,7 +6,7 @@ html {
 
 @layer base {
   p {
-    @apply font-light tracking-wider;
+    @apply font-roboto font-light;     
   }
 }
 

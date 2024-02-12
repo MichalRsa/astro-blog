@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Oswald", "Roboto", ...defaultTheme.fontFamily.sans],
+        sans: ["Oswald", ...defaultTheme.fontFamily.sans],
+        oswald: ["Oswald", ...defaultTheme.fontFamily.sans],
+        roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {

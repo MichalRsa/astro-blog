@@ -4,15 +4,15 @@ import { MainSection } from "./index/MainSection.tsx";
 import { ContactSection } from "./index/ContactSection.tsx";
 import { AboutMeSection } from "./index/AboutMeSection.tsx";
 import { data, TITLE, DESCRIPTION } from "../consts.ts";
-import { Timeline } from "./index/Timeline.jsx";
+import ExperienceSection from "./index/ExperienceSection/index.astro";
 
 const title = TITLE.HOME;
 const description = DESCRIPTION.HOME;
 ---
 
 <MainLayout title={title} description={description}>
-  <MainSection />
-  <AboutMeSection />
-  <Timeline />
+    <MainSection />
+    <AboutMeSection />
+    <ExperienceSection />
   <ContactSection socialIcons={data.socialIcons} />
 </MainLayout>

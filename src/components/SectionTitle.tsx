@@ -5,5 +5,7 @@ interface SectionTitleProps {
 }
 
 export const SectionTitle = ({ title }: SectionTitleProps): ReactElement => (
-  <h2 className="text-3xl my-8">{title}</h2>
+  <h2 className="mb-8 text-2xl md:text-4xl underline decoration-2 underline-offset-8">
+    {title}
+  </h2>
 );
