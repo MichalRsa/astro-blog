@@ -2,17 +2,17 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import { MainSection } from "./index/MainSection.tsx";
 import { ContactSection } from "./index/ContactSection.tsx";
-import { AboutMeSection } from "./index/AboutMeSection.tsx";
 import { data, TITLE, DESCRIPTION } from "../consts.ts";
 import ExperienceSection from "./index/ExperienceSection/index.astro";
+import DesignCodingSection from "./index/DesignCodingSection.astro";
 
 const title = TITLE.HOME;
 const description = DESCRIPTION.HOME;
 ---
 
 <MainLayout title={title} description={description}>
-    <MainSection />
-    <AboutMeSection />
-    <ExperienceSection />
+  <MainSection />
+  <DesignCodingSection />
+  <ExperienceSection />
   <ContactSection socialIcons={data.socialIcons} />
 </MainLayout>

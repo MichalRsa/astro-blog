@@ -1,5 +1,6 @@
 ---
 import { SectionTitle } from "../../../components/SectionTitle";
+import SectionWrapper from "../components/SectionWrapper.astro";
 import ExperienceCard from "./ExperienceCard.astro";
 
 const companies = [
@@ -55,20 +56,18 @@ const companies = [
 ];
 ---
 
-<section class="bg-ternary-200 p-12">
-  <div class="mx-auto max-w-7xl">
-    <SectionTitle title="Here I gained professional experience" />
-    <div class="flex justify-between gap-8 overflow-x-auto max-lg:-mx-12">
-      {
-        companies.map(({ img, companyName, specialization, technologies }) => (
-          <ExperienceCard
-            img={img}
-            title={companyName}
-            subTitle={specialization}
-            list={technologies}
-          />
-        ))
-      }
-    </div>
+<SectionWrapper bgColor="bg-ternary-200">
+  <SectionTitle title="Here I gained professional experience" />
+  <div class="flex justify-between gap-8 overflow-x-auto max-lg:-mx-12">
+    {
+      companies.map(({ img, companyName, specialization, technologies }) => (
+        <ExperienceCard
+          img={img}
+          title={companyName}
+          subTitle={specialization}
+          list={technologies}
+        />
+      ))
+    }
   </div>
-</section>
+</SectionWrapper>

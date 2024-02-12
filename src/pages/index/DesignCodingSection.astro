@@ -1,0 +1,35 @@
+---
+import clsx from "clsx";
+import { SectionTitle } from "../../components/SectionTitle";
+import SectionWrapper from "./components/SectionWrapper.astro";
+
+const titleColor = "primary";
+const paragraphColor = "text-secondary-50";
+---
+
+<SectionWrapper bgColor="bg-secondary-700">
+  <div class="flex flex-col">
+    <article class="sm:w-1/2 lg:pr-14">
+      <SectionTitle title="Design" color={titleColor} underlineFullWidth />
+      <p class={clsx("pb-4", paragraphColor)}>
+        In the realm of design, I s on a collaborative journey with my clients,
+        offering a personalized experience that goes beyond mere aesthetics.
+        Through active participation in the design process, clients become
+        co-creators, contributing to the visual tapestry of their online
+        presence.
+      </p>
+    </article>
+
+    <article class="sm:w-1/2 sm:self-end sm:text-end lg:pl-14">
+      <SectionTitle title="Coding" color={titleColor} underlineFullWidth />
+      <p class={clsx("pb-4", paragraphColor)}>
+        Elevate your online presence with seamless functionality. As a frontend
+        developer, I specialize in harnessing the power of JAM stack technology
+        to engineer websites that are not only visually captivating but also
+        boast unparalleled speed, security, and accessibility. With this
+        approach, your website will not only stand out aesthetically but will
+        also be cost-effective in terms of maintenance.
+      </p>
+    </article>
+  </div>
+</SectionWrapper>
