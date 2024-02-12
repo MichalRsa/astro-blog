@@ -4,17 +4,19 @@ const { img, title, subTitle, list } = Astro.props;
 const makeStringFromArray = (list: string[]) => list.join(", ");
 ---
 
-<article class="bg-primary-200 rounded-2xl w-64 md:w-72 p-6 text-center shrink-0">
+<article
+  class="bg-primary-200 rounded-2xl w-64 md:w-72 p-6 text-center shrink-0"
+>
   <div class="pb-6">
     <div class="w-24 mx-auto rounded-2xl overflow-hidden pb-1">
       <img src={img} alt="" />
     </div>
     <h3 class="text-2xl md:text-3xl pb-1">{title}</h3>
-    <h4 class="max-md:text-sm">{subTitle}</h4>
+    <h4 class="text-sm md:text-xl">{subTitle}</h4>
   </div>
 
   <div>
-    <h5 class="max-md:text-sm underline decoration-1 pb-3">TECH STACK</h5>
+    <h5 class="text-sm md:text-xl underline decoration-1 pb-3">TECH STACK</h5>
 
     <div>
       <p class="max-md:text-sm">
