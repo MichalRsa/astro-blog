@@ -5,8 +5,33 @@ html {
 }
 
 @layer base {
+  h1 {
+    @apply text-6xl font-normal;
+  }
+
+  h2 {
+    @apply text-5xl;
+  }
+
+  h3 {
+    @apply text-4xl;
+  }
+
+  h4 {
+    @apply text-4xl;
+  }
+
+  h5 {
+    @apply text-4xl;
+  }
+
+  h6 {
+    @apply text-4xl;
+  }
+
   p {
-    @apply font-roboto font-light;     
+    @apply font-roboto font-light;
+    @apply max-md:text-sm;
   }
 }
 
@@ -44,8 +69,11 @@ html {
   @apply bg-primary-500;
   border-radius: 9999px;
   transform-origin: left center;
-  transition: opacity var(--animation-timing), width var(--animation-timing),
-    rotate var(--animation-timing), translate var(--animation-timing),
+  transition:
+    opacity var(--animation-timing),
+    width var(--animation-timing),
+    rotate var(--animation-timing),
+    translate var(--animation-timing),
     background-color var(--animation-timing);
 }
 
