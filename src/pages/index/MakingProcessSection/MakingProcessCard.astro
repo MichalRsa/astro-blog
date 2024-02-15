@@ -1,0 +1,36 @@
+---
+import clsx from "clsx";
+import { SectionTitle } from "../../../components/SectionTitle";
+
+interface Props {
+  img: string;
+  title: string;
+  description: string;
+  even: boolean;
+}
+
+const { title, description, even } = Astro.props;
+
+const align = even ? "sm:text-right" : "text-left";
+---
+
+<article
+  class="mb-12 flex gap-12 rounded-2xl bg-secondary-800 p-6 text-center max-sm:flex-col sm:h-96 sm:gap-20 sm:even:flex-row-reverse md:w-full"
+>
+  <div class={clsx("sm:w-1/2 text-left", align)}>
+    <SectionTitle title={title} color="primary" underlineFullWidth />
+    <div>
+      <p class="text-ternary-200 max-md:text-sm">{description}</p>
+    </div>
+  </div>
+
+  <div class="sm:w-1/2">
+    <div class="mx-auto h-full w-full overflow-hidden rounded-2xl">
+      <img
+        src={"/MR.png"}
+        alt=""
+        class="h-full w-full object-cover object-center"
+      />
+    </div>
+  </div>
+</article>
