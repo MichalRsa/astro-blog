@@ -5,34 +5,56 @@ import { FaqCard } from "./FaqCard";
 
 const questions = [
   {
-    question: "What technology I use",
+    question: "What services do you offer as a designer software developer?",
     answer:
-      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+      "I offer a comprehensive service encompassing the entire website development process. From crafting designs using tools like Figma to coding with JAM Stack technologies such as Astro.js or Next.js, and finally, deploying the website using CDN hosting services like Netlify.",
   },
   {
-    question: "What technology I use",
+    question: "How do you approach a new project or client collaboration?",
     answer:
-      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+      "I believe in active client participation throughout the development process. Clients have the opportunity to make decisions at every step, ensuring that the final product aligns with their vision and needs.",
   },
   {
-    question: "What technology I use",
+    question:
+      "What programming languages and design tools do you specialize in?",
     answer:
-      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+      "I specialize in software development using Astro.js or Next.js, and for design, I utilize Figma to create visually appealing and user-friendly interfaces.",
   },
   {
-    question: "What technology I use",
+    question: "Can you walk me through your design and development process?",
     answer:
-      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+      "Our process begins with understanding the client's needs and defining the website's content and structure. After that, I create designs in Figma for client review and feedback. Once approved, I proceed to code the website and deploy it on the chosen hosting service.",
   },
   {
-    question: "What technology I use",
+    question: "What sets your work apart from other designers and developers?",
     answer:
-      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+      "I deliver custom websites incorporating modern trends and JAM Stack technologies, tailored to each client's specific requirements. Additionally, I offer headless CMS hosting, empowering clients to effortlessly update and manage their website content.",
   },
   {
-    question: "What technology I use",
+    question: "How do you handle feedback and revisions during a project?",
     answer:
-      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+      "We engage in multiple iterations during the UX/UI design phase, ensuring that the final product meets the client's expectations and objectives.",
+  },
+  {
+    question:
+      "Do you provide ongoing support and maintenance after the project is completed?",
+    answer:
+      "Yes, I offer ongoing support and maintenance services to ensure that the website continues to perform optimally post-deployment.",
+  },
+  {
+    question: "Can you share some examples of your previous work or projects?",
+    answer:
+      "My portfolio includes a variety of static portfolio and blog websites, showcasing my expertise in design and development.",
+  },
+  {
+    question: "What is your typical turnaround time for completing a project?",
+    answer:
+      "Turnaround time varies depending on the project's size and complexity. However, I aim to provide pricing based on the entire website rather than hourly work to offer clarity and transparency to clients.",
+  },
+  {
+    question: "How do you determine project pricing and payment terms?",
+    answer:
+      "I offer project-based or value-based pricing, considering factors such as the scope of work, project requirements, and client budget. Payment terms are discussed and agreed upon mutually before the project commences.",
   },
 ];
 ---
@@ -40,25 +62,23 @@ const questions = [
 <SectionWrapper bgColor="bg-ternary-200">
   <SectionTitle title="Frequently Asked Questions" />
 
-  <div class="sm:flex gap-2 md:gap-12">
-    <div class="sm:w-1/2">
+  <div class="gap-2 lg:flex lg:gap-12">
+    <div class="lg:w-1/2">
       {
-        questions.slice(0, 3).map((faq) => (
+        questions.slice(0, 5).map((faq) => (
           <div class="my-6">
             <FaqCard question={faq.question} answer={faq.answer} client:idle />
           </div>
         ))
       }
     </div>
-    <div class="sm:w-1/2">
+    <div class="lg:w-1/2">
       {
-        questions
-          .slice(3)
-          .map((faq) => (
+        questions.slice(5).map((faq) => (
           <div class="my-6">
             <FaqCard question={faq.question} answer={faq.answer} client:idle />
           </div>
-          ))
+        ))
       }
     </div>
   </div>

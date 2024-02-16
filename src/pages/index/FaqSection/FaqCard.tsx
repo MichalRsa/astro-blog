@@ -16,23 +16,21 @@ export const FaqCard = ({ question, answer }: FaqCardProps): ReactElement => {
           setIsOpen(!isOpen);
         }}
       >
-        <span>{question}</span>
-
-        <svg
-          className={`w-6 h-6 transition-all ${isOpen ? "transform rotate-180" : ""}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+        <span className="text-left">{question}</span>
+        <div
+          // className={`h-6 w-6 min-w-6 transition-all flex-grow-0 ${isOpen ? "transform rotate-180" : ""}`}
+          className="h-6 min-w-[24px] transition-all flex-grow-0"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
       </button>
-
       <div
         className="pt-4 grid transition-all"
         style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
