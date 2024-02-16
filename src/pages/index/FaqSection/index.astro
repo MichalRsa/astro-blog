@@ -1,0 +1,65 @@
+---
+import { SectionTitle } from "../../../components/SectionTitle";
+import SectionWrapper from "../components/SectionWrapper.astro";
+import { FaqCard } from "./FaqCard";
+
+const questions = [
+  {
+    question: "What technology I use",
+    answer:
+      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+  },
+  {
+    question: "What technology I use",
+    answer:
+      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+  },
+  {
+    question: "What technology I use",
+    answer:
+      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+  },
+  {
+    question: "What technology I use",
+    answer:
+      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+  },
+  {
+    question: "What technology I use",
+    answer:
+      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+  },
+  {
+    question: "What technology I use",
+    answer:
+      " I use this and that because I think it's good someone important recommends it also and that justifies my choice. Deal with that!",
+  },
+];
+---
+
+<SectionWrapper bgColor="bg-ternary-200">
+  <SectionTitle title="Frequently Asked Questions" />
+
+  <div class="sm:flex gap-2 md:gap-12">
+    <div class="sm:w-1/2">
+      {
+        questions.slice(0, 3).map((faq) => (
+          <div class="my-6">
+            <FaqCard question={faq.question} answer={faq.answer} client:idle />
+          </div>
+        ))
+      }
+    </div>
+    <div class="sm:w-1/2">
+      {
+        questions
+          .slice(3)
+          .map((faq) => (
+          <div class="my-6">
+            <FaqCard question={faq.question} answer={faq.answer} client:idle />
+          </div>
+          ))
+      }
+    </div>
+  </div>
+</SectionWrapper>
