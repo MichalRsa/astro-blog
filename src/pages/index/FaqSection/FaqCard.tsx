@@ -1,4 +1,5 @@
-import { useState, type ReactElement } from "react";
+import { useState, type ReactElement, useRef, useEffect } from "react";
+import { observer } from "../../../services/observerService";
 
 interface FaqCardProps {
   question: string;
@@ -8,8 +9,27 @@ interface FaqCardProps {
 export const FaqCard = ({ question, answer }: FaqCardProps): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const targetRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const target = targetRef.current;
+    if (target != null) {
+      observer.observe(target);
+    }
+
+    // Cleanup function to unobserve when the component unmounts
+    return () => {
+      if (target != null) {
+        observer.unobserve(target);
+      }
+    };
+  }, []);
+
   return (
-    <div className="bg-primary-200 rounded-3xl p-4 ">
+    <div
+      ref={targetRef}
+      className="animationHidden animationLeft bg-primary-200 rounded-3xl p-4 "
+    >
       <button
         className="border-b-secondary-500 border-b-2 flex w-full justify-between items-center text-xl md:text-2xl pb-4"
         onClick={() => {
@@ -17,10 +37,7 @@ export const FaqCard = ({ question, answer }: FaqCardProps): ReactElement => {
         }}
       >
         <span className="text-left">{question}</span>
-        <div
-          // className={`h-6 w-6 min-w-6 transition-all flex-grow-0 ${isOpen ? "transform rotate-180" : ""}`}
-          className="h-6 min-w-[24px] transition-all flex-grow-0"
-        >
+        <div className="h-6 min-w-[24px] transition-all flex-grow-0">
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
               strokeLinecap="round"

@@ -1,13 +1,19 @@
 ---
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 interface Props {
   title: string;
   color?: "primary" | "secondary";
   underlineFullWidth?: boolean;
+  animate?: boolean;
 }
 
-const { title, color = "secondary", underlineFullWidth = false } = Astro.props;
+const {
+  title,
+  color = "secondary",
+  underlineFullWidth = false,
+  animate = false,
+} = Astro.props;
 
 const titleColor = {
   primary: "border-primary-500 text-primary-500",
@@ -16,12 +22,13 @@ const titleColor = {
 ---
 
 <h2
-  class={clsx(
-    "mb-8  text-2xl md:text-4xl",
+  class={twMerge(
+    "mb-8 text-2xl md:text-4xl",
     underlineFullWidth
       ? "border-b-2 pb-1"
       : "underline decoration-2 underline-offset-8",
     titleColor[color],
+    animate && "animationHidden animationLeft",
   )}
 >
   {title}

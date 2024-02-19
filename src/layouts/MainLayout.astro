@@ -13,9 +13,12 @@ const { title, description } = Astro.props;
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body>
+  <body class="overflow-x-hidden">
+  // <body >
     <Header client:load />
     <slot />
     <Footer />
+    <script src="../services/observerService.ts">
+    </script>
   </body>
 </html>
