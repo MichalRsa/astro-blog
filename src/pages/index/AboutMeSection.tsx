@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { SectionTitle } from "../../components/SectionTitle.tsx";
+import SectionTitle from "../../components/SectionTitle.astro";
 
 export const AboutMeSection = (): ReactElement => {
   return (
