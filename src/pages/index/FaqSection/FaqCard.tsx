@@ -1,5 +1,4 @@
 import { useState, type ReactElement, useRef, useEffect } from "react";
-import { observer } from "../../../services/observerService";
 
 interface FaqCardProps {
   question: string;
@@ -13,6 +12,13 @@ export const FaqCard = ({ question, answer }: FaqCardProps): ReactElement => {
 
   useEffect(() => {
     const target = targetRef.current;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
     if (target != null) {
       observer.observe(target);
     }

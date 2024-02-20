@@ -12,8 +12,12 @@
   transform: translateX(100px);
 }
 
+.animationBottom {
+  transform: translateY(100px);
+}
+
 .show {
   @apply opacity-100;
   filter: blur(0);
-  transform: translateX(0);
+  transform: translate(0, 0);
 }

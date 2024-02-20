@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 
 import "@fontsource/oswald";
 import "@fontsource/roboto";
+import { ViewTransitions } from "astro:transitions";
 
 const { title, description } = Astro.props;
 ---
@@ -12,13 +13,14 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <ViewTransitions />
   </head>
-  <body class="overflow-x-hidden">
-  // <body >
-    <Header client:load />
-    <slot />
-    <Footer />
-    <script src="../services/observerService.ts">
-    </script>
+  <body>
+    <div class="overflow-x-hidden">
+      <Header client:load />
+      <slot />
+      <Footer />
+    </div>
+    <script src="../services/observerService.ts"></script>
   </body>
 </html>
