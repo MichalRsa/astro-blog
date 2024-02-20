@@ -1,7 +1,7 @@
 ---
 const { img, title, subTitle, list } = Astro.props;
 
-const makeStringFromArray = (list: string[]) => list.join(", ");
+const makeStringFromArray = (list: string[]) => list?.join(", ");
 ---
 
 <article
