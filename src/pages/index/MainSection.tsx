@@ -20,14 +20,16 @@ export const MainSection = (): ReactElement => {
           </div>
         </div>
         <div className="max-lg:scale-[.7] max-lg:w-[600px] max-lg:absolute max-[720px]:right-[-93px] max-[620px]:right-[-192px] relative z-[-10] right-0 top-0 max-w-lg rounded-3xl overflow-hidden lg:min-w-[512px] h-[500px] bg-ternary-200 max-[432px]:top-[174px]">
-          <img
-            className="absolute w-[1000px]"
-            style={{ maxWidth: "none", top: "-36%", left: "-70%" }}
-            src="/myself.png"
-            alt=""
-          />
+          <div className="text-center">placeholder</div>
         </div>
       </div>
     </section>
   );
 };
+
+// <img
+//   className="absolute w-[1000px]"
+//   style={{ maxWidth: "none", top: "-36%", left: "-70%" }}
+//   src="/myself.png"
+//   alt=""
+// />
