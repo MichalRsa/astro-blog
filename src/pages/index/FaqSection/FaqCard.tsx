@@ -34,7 +34,7 @@ export const FaqCard = ({ question, answer }: FaqCardProps): ReactElement => {
   return (
     <div
       ref={targetRef}
-      className="animationHidden animationLeft bg-primary-200 rounded-3xl p-4 "
+      className="animationHidden animationLeft shadow-xl bg-primary-200 rounded-3xl p-4"
     >
       <button
         className="border-b-secondary-500 border-b-2 flex w-full justify-between items-center text-xl md:text-2xl pb-4"
