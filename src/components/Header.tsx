@@ -1,20 +1,20 @@
-import { type ReactElement, useState } from 'react';
-import { Button } from '../components/Button.tsx';
-import { useMediaQuery } from 'react-responsive';
-import clsx from 'clsx';
+import { type ReactElement, useState } from "react";
+import { Button } from "../components/Button.tsx";
+import { useMediaQuery } from "react-responsive";
+import clsx from "clsx";
 const links = [
   {
-    label: 'about me',
-    url: '/',
+    label: "about me",
+    url: "/",
   },
   {
-    label: 'blog',
-    url: '/blog/',
+    label: "blog",
+    url: "/blog/",
   },
 ];
 
 export const Header = (): ReactElement => {
-  const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const handleClick = (): void => {
@@ -30,13 +30,13 @@ export const Header = (): ReactElement => {
           </h2>
           {isMobile && (
             <button
-              className={clsx('hamburger-menu', showMobileMenu && 'active')}
+              className={clsx("hamburger-menu", showMobileMenu && "active")}
               onClick={() => {
                 handleClick();
               }}
             >
               <span
-                className={clsx('hamburger-menu', showMobileMenu && 'active')}
+                className={clsx("hamburger-menu", showMobileMenu && "active")}
               />
             </button>
           )}
@@ -56,7 +56,7 @@ export const Header = (): ReactElement => {
               <Button
                 text="Let's work together"
                 fontSize="text-xl"
-                classes={clsx(isMobile && 'py-1 px-6')}
+                classes={clsx(isMobile && "py-1 px-6")}
               />
             </li>
           </ul>
@@ -64,9 +64,9 @@ export const Header = (): ReactElement => {
         {isMobile && (
           <ul
             className={clsx(
-              showMobileMenu && 'active',
-              'dropdown',
-              'bg-secondary-400 text-center',
+              showMobileMenu && "active",
+              "dropdown",
+              "bg-secondary-400 text-center",
             )}
           >
             {links.map((link) => (

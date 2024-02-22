@@ -16,7 +16,7 @@ export const MainSection = (): ReactElement => {
             design, create and make your website fast and editable.
           </p>
           <div className="lg:mb-16 mb-2">
-            <Button />
+            <Button withShadow />
           </div>
         </div>
         <div className="max-lg:scale-[.7] max-lg:w-[600px] max-lg:absolute max-[720px]:right-[-93px] max-[620px]:right-[-192px] relative z-[-10] right-0 top-0 max-w-lg rounded-3xl overflow-hidden lg:min-w-[512px] h-[500px] bg-ternary-200 max-[432px]:top-[174px]">
