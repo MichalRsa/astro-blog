@@ -15,3 +15,7 @@ const setObserver = (): void => {
 };
 
 setObserver();
+
+document.addEventListener("astro:after-swap", () => {
+  setObserver();
+});
