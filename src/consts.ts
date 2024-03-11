@@ -22,9 +22,9 @@ export const data = {
       link: "https://www.linkedin.com/in/rosa-michal/",
     },
     {
-      src: "x-logo.webp",
+      src: "discord.png",
       alt: "x icon",
-      link: "https://twitter.com/Michal__Rsa",
+      link: "https://discord.com/channels/@me/1210565324693315644",
     },
     {
       src: "tech-icons/github.webp",
@@ -34,19 +34,19 @@ export const data = {
   ],
   favIcons: [
     {
-      src: "postgresql",
-      alt: "postgresql",
-    },
-    {
-      src: "express",
-      alt: "express",
-    },
-    {
-      src: "react",
+      src: "/tech-icons/react.webp",
       alt: "react",
     },
     {
-      src: "node",
+      src: "/tech-icons/nextjs.png",
+      alt: "nextjs",
+    },
+    {
+      src: "/tech-icons/typescript.webp",
+      alt: "typescript",
+    },
+    {
+      src: "/tech-icons/node.webp",
       alt: "node.js",
     },
   ],

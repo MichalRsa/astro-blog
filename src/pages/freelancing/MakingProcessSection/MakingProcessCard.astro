@@ -9,7 +9,7 @@ interface Props {
   even: boolean;
 }
 
-const { title, description, even } = Astro.props;
+const { title, description, even, img } = Astro.props;
 
 const align = even ? "sm:text-right" : "text-left";
 ---
@@ -27,7 +27,7 @@ const align = even ? "sm:text-right" : "text-left";
   <div class="sm:w-1/2">
     <div class="mx-auto h-full w-full overflow-hidden rounded-2xl">
       <img
-        src={"/MR.png"}
+        src={!!img ? img : "/MR.png"}
         alt=""
         class="h-full w-full object-cover object-center"
       />

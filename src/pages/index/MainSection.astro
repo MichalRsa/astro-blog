@@ -1,0 +1,51 @@
+---
+import { Button } from "../../components/Button";
+import { data } from "../../consts.ts";
+
+const icons = data.favIcons;
+---
+
+<section class="z-10 flex max-w-full flex-col self-stretch">
+  <div
+    class="rounded-3xl sm:min-w-[276px] md:mr-[-150px] md:bg-secondary-700 md:p-8 md:pr-6 lg:mr-0 lg:min-w-[460px]"
+  >
+    <h1 class="mb-2 text-2xl text-primary-500 lg:mb-8 lg:text-5xl">
+      Hi! I'm <br />
+      Michał Rosa
+    </h1>
+    <p class="text-md mb-2 text-ternary-50 lg:text-xl">
+      I make web apps with <br />
+      modern frontend frameworks and node.js
+    </p>
+  </div>
+  <div class="flex-center hidden flex-1 flex-col md:flex">
+    <div class="inline"></div>
+    <p class="pt-2 text-center md:pt-8 text-xl lg:text-3xl">
+      If you need developer for
+    </p>
+    <ul class="flex flex-wrap items-center justify-center">
+      {
+        icons.map((icon) => (
+          <li class="basis-[36%]">
+            <div class="m-auto w-28 lg:w-36 px-8 py-4">
+              <img
+                src={`${icon.src}`}
+                alt={`${icon.alt} icon`}
+                title={`${icon.alt} icon`}
+                class="object-cover"
+              />
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="flex grow items-center justify-center">
+      <Button type="secondary" text="Contact me!" />
+    </div>
+  </div>
+
+  <!-- <div class="flex justify-around gap-4"> -->
+  <!--   <Button text="Hire me!" /> -->
+  <!--   <Button text="Get in touch" type="secondary" /> -->
+  <!-- </div> -->
+</section>

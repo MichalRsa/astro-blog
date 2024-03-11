@@ -24,7 +24,7 @@ export const Header = (): ReactElement => {
   return (
     <header>
       <nav className="fixed z-50 flex w-full flex-col-reverse max-lg:bottom-0 lg:top-0">
-        <div className="z-50 box-border flex items-center justify-between bg-secondary-500 px-4 py-2 text-ternary-500 sm:justify-center sm:px-12 sm:py-5  lg:justify-between">
+        <div className="z-50 box-border flex items-center justify-between bg-secondary-500 px-4 py-2 text-ternary-500 sm:justify-center sm:px-12 sm:py-2  lg:justify-between">
           <h2 className="text-3xl max-lg:hidden">
             Michał Rosa | Frontend Developer
           </h2>
@@ -43,7 +43,7 @@ export const Header = (): ReactElement => {
           <ul className="z-50 flex items-center">
             {!isMobile &&
               links.map((link) => (
-                <li className="mx-2 text-xl capitalize" key={link.label}>
+                <li className="mx-2 text-base capitalize" key={link.label}>
                   <a
                     href={link.url}
                     className="p-3 hover:underline hover:decoration-2 hover:underline-offset-8"
@@ -52,10 +52,10 @@ export const Header = (): ReactElement => {
                   </a>
                 </li>
               ))}
-            <li className="mx-2 text-xl">
+            <li className="mx-2">
               <Button
                 text="Let's work together"
-                fontSize="text-xl"
+                fontSize="text-base"
                 classes={clsx(isMobile && "py-1 px-6")}
               />
             </li>
@@ -71,7 +71,7 @@ export const Header = (): ReactElement => {
           >
             {links.map((link) => (
               <li
-                className="p-3 text-xl capitalize text-ternary-500"
+                className="p-3 text-base capitalize text-ternary-500"
                 key={link.label}
               >
                 <a
