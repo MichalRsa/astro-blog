@@ -8,8 +8,12 @@ const links = [
     url: "/",
   },
   {
+    label: "freelancing",
+    url: "/freelancing",
+  },
+  {
     label: "blog",
-    url: "/blog/",
+    url: "/blog",
   },
 ];
 
@@ -54,9 +58,10 @@ export const Header = (): ReactElement => {
               ))}
             <li className="mx-2">
               <Button
-                text="Let's work together"
+                text="Contact Me"
                 fontSize="text-base"
                 classes={clsx(isMobile && "py-1 px-6")}
+                href="/contact-me"
               />
             </li>
           </ul>

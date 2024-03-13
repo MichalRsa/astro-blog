@@ -14,13 +14,13 @@ const description = DESCRIPTION.HOME;
 <MainLayout title={title} description={description}>
   <SectionWrapper bgColor="bg-ternary-200">
     <div
-      class="flex flex-col items-start justify-center gap-x-4 pb-16 md:flex-row lg:pt-8"
+      class="relative left-0 flex items-start justify-center gap-x-4 pb-16 flex-row lg:pt-8"
     >
       <MainSection />
       <div
-        class="mt-8 self-end overflow-hidden rounded-3xl md:max-w-lg lg:min-w-[512px]"
+        class="mt-8 self-end overflow-hidden max-[340px]:scale-150 rounded-3xl md:max-w-lg  lg:min-w-[512px]"
       >
-        <img class="object-cover" src="/myself.webp" alt="" />
+        <img class="object-cover " src="/myself.webp" alt="" />
       </div>
     </div>
   </SectionWrapper>
