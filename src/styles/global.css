@@ -36,6 +36,10 @@ html {
     @apply font-roboto font-light;
     @apply max-md:text-sm;
   }
+
+  input, textarea {
+    @apply font-roboto;
+  }
 }
 
 :root {

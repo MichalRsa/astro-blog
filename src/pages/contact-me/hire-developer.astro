@@ -1,0 +1,19 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ContactMeSection from "@components/index/ContactMeSection.astro";
+import Form from "./DeveloperForm.tsx";
+import SectionWrapper from "@components/freelancing/components/SectionWrapper.astro";
+---
+
+<MainLayout title="" description="">
+  <SectionWrapper bgColor="bg-ternary-200">
+    <h1 class="pt-16 text-center">
+      Hire me as a <span
+        class="underline decoration-primary-500 decoration-4 underline-offset-4"
+        >developer</span
+      >
+    </h1>
+    <Form client:load />
+  </SectionWrapper>
+  <ContactMeSection />
+</MainLayout>
