@@ -81,8 +81,8 @@ export default function Form(): ReactElement {
       <Field>
         <Label htmlFor="description" text="Describe the position" />
         <textarea
-          placeholder="Provide information about the role, recruitment process, project, company culture, etc. "
-          className="h-52 p-4 border-2 rounded-xl border-secondary-50 "
+          placeholder="Provide information about the role, recruitment process, project, company culture, etc."
+          className="text-sm md:text-base  h-52 p-4 border-2 rounded-xl border-secondary-50"
           {...register("description", {
             required: requiredMessage,
             minLength: {
@@ -97,7 +97,9 @@ export default function Form(): ReactElement {
       </Field>
       <Field>
         <fieldset>
-          <legend className="text-2xl pb-4">When I should start </legend>
+          <legend className="text-lg md:text-2xl pb-4">
+            When I should start
+          </legend>
           <div className="flex flex-wrap gap-2">
             <div>
               <RadioInput

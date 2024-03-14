@@ -9,7 +9,7 @@ html {
 
 @layer base {
   h1 {
-    @apply text-6xl font-normal;
+    @apply text-4xl md:text-6xl font-normal;
   }
 
   h2 {
@@ -37,7 +37,8 @@ html {
     @apply max-md:text-sm;
   }
 
-  input, textarea {
+  input,
+  textarea {
     @apply font-roboto;
   }
 }

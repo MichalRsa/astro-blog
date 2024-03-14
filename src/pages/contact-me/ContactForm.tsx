@@ -7,9 +7,9 @@ export const FormWrapper = ({
   handleSubmit: React.FormEventHandler<HTMLFormElement>;
   children: ReactNode;
 }): ReactElement => (
-  <div className="lg:pt-24 lg:w-2/4 m-auto">
+  <div className="lg:w-2/4 mx-auto">
     <form
-      className="rounded-3xl bg-ternary-50 shadow-secondary-200 shadow-xl p-8 flex flex-col"
+      className="rounded-3xl bg-ternary-50 shadow-secondary-200 shadow-xl p-3 md:p-8 flex flex-col"
       onSubmit={handleSubmit}
     >
       {children}
@@ -25,7 +25,9 @@ export const ErrorMessage = ({
 }: {
   message: string;
 }): ReactElement => (
-  <p className="absolute bottom-3 left-0 text-danger-500 text-lg">{message}</p>
+  <p className="absolute bottom-3 left-0 text-danger-500 text-base md:text-lg">
+    {message}
+  </p>
 );
 export const Input = ({
   registerObject,
@@ -36,7 +38,7 @@ export const Input = ({
 }): ReactElement => {
   return (
     <input
-      className="rounded-xl p-4 border-2 border-secondary-50"
+      className="text-sm md:text-base rounded-xl p-4 border-2 border-secondary-50"
       {...registerObject}
       placeholder={placeholder}
     />
@@ -69,7 +71,7 @@ export const Label = ({
   text: string;
 }): ReactElement => {
   return (
-    <label className="text-2xl pb-4" htmlFor={htmlFor}>
+    <label className="text-lg md:text-2xl pb-4" htmlFor={htmlFor}>
       {text}
     </label>
   );
@@ -94,7 +96,7 @@ export const RadioLabel = ({
 
 export const SubmitButton = (): ReactElement => (
   <input
-    className="!bg-primary-500 hover:!bg-primary-600 rounded-xl text-3xl w-fit py-2 px-8 mt-2 cursor-pointer"
+    className="!bg-primary-500 hover:!bg-primary-600 rounded-xl text-xl md:text-3xl w-fit py-2 px-8 mt-2 cursor-pointer"
     type="submit"
     value="Submit"
   />
