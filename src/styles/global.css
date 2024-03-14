@@ -9,7 +9,7 @@ html {
 
 @layer base {
   h1 {
-    @apply text-6xl font-normal;
+    @apply text-4xl md:text-6xl font-normal;
   }
 
   h2 {

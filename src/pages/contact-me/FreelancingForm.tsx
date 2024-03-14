@@ -82,7 +82,7 @@ export default function Form(): ReactElement {
         <Label htmlFor="description" text="Describe your website idea" />
         <textarea
           placeholder="Provide invormation about the business, website goal, the customer, and overall idea"
-          className="h-52 p-4 border-2 rounded-xl border-secondary-50 "
+          className="text-sm md:text-base  h-52 p-4 border-2 rounded-xl border-secondary-50 "
           {...register("description", {
             required: requiredMessage,
             minLength: {
@@ -97,10 +97,10 @@ export default function Form(): ReactElement {
       </Field>
       <Field>
         <fieldset>
-          <legend className="text-2xl pb-4">
+          <legend className="text-lg md:text-2xl pb-4">
             When you expect website to be ready
           </legend>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <div>
               <RadioInput
                 registerObject={register("radio", { required: true })}
