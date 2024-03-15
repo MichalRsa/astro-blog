@@ -35,13 +35,28 @@ export default function Form(): ReactElement {
       radio: "",
     },
   });
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const URLData = Object.entries(data);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(URLData).toString(),
+    })
+      // .then(() => navigate("/thank-you/"))
+      .catch((error) => alert(error));
+  };
+
   watch("radio");
 
   const requiredMessage = "This field is required";
 
   return (
-    <FormWrapper handleSubmit={handleSubmit(onSubmit)}>
+    <FormWrapper
+      formName="developer-form"
+      handleSubmit={handleSubmit(onSubmit)}
+    >
       <Field>
         <Label htmlFor="companyName" text="Company name" />
         <Input

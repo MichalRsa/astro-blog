@@ -3,15 +3,21 @@ import type { ReactElement, ReactNode } from "react";
 export const FormWrapper = ({
   handleSubmit,
   children,
+  formName,
 }: {
   handleSubmit: React.FormEventHandler<HTMLFormElement>;
   children: ReactNode;
+  formName: string;
 }): ReactElement => (
   <div className="lg:w-2/4 mx-auto">
     <form
+      name={formName}
+      method="POST"
+      data-netlify="true"
       className="rounded-3xl bg-ternary-50 shadow-secondary-200 shadow-xl p-3 md:p-8 flex flex-col"
       onSubmit={handleSubmit}
     >
+      <input type="hidden" name="form-name" value={formName} />
       {children}
     </form>
   </div>
