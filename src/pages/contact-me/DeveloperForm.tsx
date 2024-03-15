@@ -36,13 +36,18 @@ export default function Form(): ReactElement {
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const URLData = Object.entries(data);
+  const onSubmit: SubmitHandler<Inputs> = (data, event) => {
+    // const URLData = Object.entries(data);
+    event?.preventDefault();
+
+    const myForm = event?.target;
+    const formData = new FormData(myForm);
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(URLData).toString(),
+      // @ts-expect-error testing damn forms
+      body: new URLSearchParams(formData).toString(),
     })
       // .then(() => navigate("/thank-you/"))
       .catch((error) => alert(error));
