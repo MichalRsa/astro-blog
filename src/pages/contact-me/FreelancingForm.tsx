@@ -36,9 +36,11 @@ export default function Form(): ReactElement {
     },
   });
 
+  const formName = "freelancing-form";
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const URLData = Object.entries(data);
-    
+    const URLData = Object.entries({ "form-name": formName, ...data });
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -53,10 +55,7 @@ export default function Form(): ReactElement {
   const requiredMessage = "This field is required";
 
   return (
-    <FormWrapper
-      formName="freelancing-form"
-      handleSubmit={handleSubmit(onSubmit)}
-    >
+    <FormWrapper formName={formName} handleSubmit={handleSubmit(onSubmit)}>
       <Field>
         <Label htmlFor="companyName" text="Company name" />
         <Input
