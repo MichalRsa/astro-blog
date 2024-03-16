@@ -29,9 +29,11 @@ export const Header = (): ReactElement => {
     <header>
       <nav className="fixed z-50 flex w-full flex-col-reverse max-lg:bottom-0 lg:top-0">
         <div className="z-50 box-border flex items-center justify-between bg-secondary-500 px-4 py-2 text-ternary-500 sm:justify-center sm:px-12 sm:py-2  lg:justify-between">
-          <h2 className="text-3xl max-lg:hidden">
-            Michał Rosa | Frontend Developer
-          </h2>
+          <a href="/">
+            <h2 className="text-3xl max-lg:hidden">
+              Michał Rosa | Frontend Developer
+            </h2>
+          </a>
           {isMobile && (
             <button
               className={clsx("hamburger-menu", showMobileMenu && "active")}
