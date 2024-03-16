@@ -3,9 +3,13 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import ContactMeSection from "@components/index/ContactMeSection.astro";
 import Form from "@components/contact-me/DeveloperForm.tsx";
 import SectionWrapper from "@components/freelancing/components/SectionWrapper.astro";
+import { DESCRIPTION, TITLE } from "src/consts";
+
+const title = TITLE.CONTACT_ME;
+const description = DESCRIPTION.CONTACT_ME;
 ---
 
-<MainLayout title="" description="">
+<MainLayout title={title} description={description}>
   <SectionWrapper bgColor="bg-ternary-200">
     <h1 class="pt-16 pb-12 text-center">
       Hire me as a <span
