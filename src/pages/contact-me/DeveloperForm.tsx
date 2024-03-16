@@ -10,6 +10,7 @@ import {
   RadioInput,
 } from "./ContactForm";
 import type { ReactElement } from "react";
+import { navigate } from "astro/virtual-modules/transitions-router.js";
 
 interface Inputs {
   companyName: string;
@@ -36,21 +37,22 @@ export default function Form(): ReactElement {
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data, event) => {
-    // const URLData = Object.entries(data);
-    event?.preventDefault();
+  const formName = "developer-form";
 
-    const myForm = event?.target;
-    const formData = new FormData(myForm);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const URLData = Object.entries({ "form-name": formName, ...data });
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      // @ts-expect-error testing damn forms
-      body: new URLSearchParams(formData).toString(),
+      body: new URLSearchParams(URLData).toString(),
     })
-      // .then(() => navigate("/thank-you/"))
-      .catch((error) => alert(error));
+      .then(() => {
+        void navigate("/thank-you/");
+      })
+      .catch(() => {
+        void navigate("/oops/");
+      });
   };
 
   watch("radio");
@@ -60,6 +62,7 @@ export default function Form(): ReactElement {
   return (
     <FormWrapper
       formName="developer-form"
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
       handleSubmit={handleSubmit(onSubmit)}
     >
       <Field>

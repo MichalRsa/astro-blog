@@ -10,6 +10,7 @@ import {
   RadioInput,
 } from "./ContactForm";
 import type { ReactElement } from "react";
+import { navigate } from "astro/virtual-modules/transitions-router.js";
 
 interface Inputs {
   companyName: string;
@@ -46,8 +47,12 @@ export default function Form(): ReactElement {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(URLData).toString(),
     })
-      // .then(() => navigate("/thank-you/"))
-      .catch((error) => alert(error));
+      .then(() => {
+        void navigate("/thank-you/");
+      })
+      .catch(() => {
+        void navigate("/oops/");
+      });
   };
 
   watch("radio");
@@ -55,6 +60,7 @@ export default function Form(): ReactElement {
   const requiredMessage = "This field is required";
 
   return (
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     <FormWrapper formName={formName} handleSubmit={handleSubmit(onSubmit)}>
       <Field>
         <Label htmlFor="companyName" text="Company name" />
