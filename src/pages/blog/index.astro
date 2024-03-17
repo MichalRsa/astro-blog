@@ -8,12 +8,17 @@ const title = TITLE.BLOG;
 const description = DESCRIPTION.BLOG;
 
 import { getCollection } from "astro:content";
+import type { ImageMetadata } from "astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const newestPost = posts[0];
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/blog/*.{jpeg,jpg,png,webp}",
+);
 ---
 
 <MainLayout title={title} description={description}>
@@ -23,7 +28,7 @@ const newestPost = posts[0];
         newestPost && (
           <li class="mb-6 w-full px-2">
             <BigArticleCard
-              heroImage={import(newestPost?.data.heroImage ?? "")}
+              heroImage={images[newestPost?.data.heroImage]()}
               imgAlt={newestPost.data.imgAlt}
               slug={newestPost.slug}
               title={newestPost.data.title}
@@ -38,7 +43,7 @@ const newestPost = posts[0];
           posts.slice(1).map((post) => (
             <li class="mb-6 w-full px-2 md:mb-12 md:w-1/2">
               <ArticleCard
-                heroImage={import(post.data.heroImage ?? "")}
+                heroImage={images[post.data.heroImage]()}
                 imgAlt={post.data.imgAlt}
                 slug={post.slug}
                 title={post.data.title}

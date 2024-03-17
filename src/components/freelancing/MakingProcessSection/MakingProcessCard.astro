@@ -13,6 +13,10 @@ interface Props {
 const { title, description, even, img } = Astro.props;
 
 const align = even ? "sm:text-right" : "text-left";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/*.{jpeg,jpg,png,webp}",
+);
 ---
 
 <article
@@ -28,7 +32,7 @@ const align = even ? "sm:text-right" : "text-left";
   <div class="sm:w-1/2">
     <div class="mx-auto h-full w-full overflow-hidden rounded-2xl">
       <Image
-        src={import('/src/images' + img)}
+        src={images["/src/images" + img]()}
         alt=""
         class="h-full w-full object-cover object-center"
       />

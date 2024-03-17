@@ -3,6 +3,10 @@ import SectionTitle from "../../../components/SectionTitle.astro";
 import SectionWrapper from "../components/SectionWrapper.astro";
 import ExperienceCard from "./ExperienceCard.astro";
 
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/*.{jpeg,jpg,png,webp}",
+);
+
 const companies = [
   {
     img: "/src/images/skygate.webp",
@@ -69,7 +73,7 @@ const companies = [
     {
       companies.map(({ img, companyName, specialization, technologies }) => (
         <ExperienceCard
-          img={img}
+          img={images[img]()}
           title={companyName}
           subTitle={specialization}
           list={technologies}

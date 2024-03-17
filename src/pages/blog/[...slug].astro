@@ -18,6 +18,10 @@ const post = Astro.props;
 const { Content } = await post.render();
 
 const title = TITLE.BLOG_POST(post.data.title);
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/blog/*.{jpeg,jpg,png,webp}",
+);
 ---
 
 <MainLayout title={title} description={post.data.description}>
@@ -33,7 +37,7 @@ const title = TITLE.BLOG_POST(post.data.title);
               <div class="overflow-hidden rounded-2xl">
                 <Image
                   class="h-full w-full object-cover"
-                  src={import(post.data.heroImage ?? "")}
+                  src={images[post.data.heroImage]()}
                   alt={post.data.imgAlt}
                 />
               </div>

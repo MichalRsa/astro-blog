@@ -2,8 +2,13 @@
 import { Image } from "astro:assets";
 import { Button } from "../../components/Button";
 import { data } from "../../consts.ts";
+import type { ImageMetadata } from "astro";
 
 const icons = data.favIcons;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/tech-icons/*.{jpeg,jpg,png,webp}",
+);
 ---
 
 <section
@@ -33,7 +38,7 @@ const icons = data.favIcons;
           <li class="basis-[36%]">
             <div class="m-auto w-24 px-4 py-2 md:w-28 md:px-8 md:py-4 lg:w-36">
               <Image
-                src={import(icon.src)}
+                src={images[icon.src]()}
                 alt={`${icon.alt} icon`}
                 title={`${icon.alt} icon`}
                 class="object-cover"
