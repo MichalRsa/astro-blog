@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import MainSection from "@components/index/MainSection.astro";
 import AboutMeSection from "@components/index/AboutMeSection.astro";
@@ -6,6 +7,7 @@ import ExperienceSection from "@components/freelancing/ExperienceSection/index.a
 import { TITLE, DESCRIPTION } from "../consts.ts";
 import SectionWrapper from "@components/freelancing/components/SectionWrapper.astro";
 import ContactMeSection from "@components/index/ContactMeSection.astro";
+import Myself from "@images/myself.webp";
 
 const title = TITLE.HOME;
 const description = DESCRIPTION.HOME;
@@ -20,7 +22,7 @@ const description = DESCRIPTION.HOME;
       <div
         class="mt-8 self-end overflow-hidden rounded-3xl max-[340px]:scale-150 md:max-w-lg lg:min-w-[512px]"
       >
-        <img class="object-cover" src="/myself.webp" alt="" />
+        <Image src={Myself} alt="" width={512} height={663} />
       </div>
     </div>
   </SectionWrapper>

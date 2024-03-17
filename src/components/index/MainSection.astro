@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { Button } from "../../components/Button";
 import { data } from "../../consts.ts";
 
@@ -31,8 +32,8 @@ const icons = data.favIcons;
         icons.map((icon) => (
           <li class="basis-[36%]">
             <div class="m-auto w-24 px-4 py-2 md:w-28 md:px-8 md:py-4 lg:w-36">
-              <img
-                src={`${icon.src}`}
+              <Image
+                src={import(icon.src)}
                 alt={`${icon.alt} icon`}
                 title={`${icon.alt} icon`}
                 class="object-cover"

@@ -34,26 +34,26 @@ export const data = {
       link: "https://discord.com/channels/@me/1210565324693315644",
     },
     {
-      src: "tech-icons/github.webp",
+      src: "github.webp",
       alt: "github icon",
       link: "https://github.com/MichalRsa",
     },
   ],
   favIcons: [
     {
-      src: "/tech-icons/react.webp",
+      src: "/src/images/tech-icons/react.webp",
       alt: "react",
     },
     {
-      src: "/tech-icons/nextjs.png",
+      src: "/src/images/tech-icons/nextjs.png",
       alt: "nextjs",
     },
     {
-      src: "/tech-icons/typescript.webp",
+      src: "/src/images/tech-icons/typescript.webp",
       alt: "typescript",
     },
     {
-      src: "/tech-icons/node.webp",
+      src: "/src/images/tech-icons/node.webp",
       alt: "node.js",
     },
   ],

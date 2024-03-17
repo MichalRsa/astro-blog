@@ -1,6 +1,7 @@
 ---
 import clsx from "clsx";
 import SectionTitle from "../../../components/SectionTitle.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   img: string;
@@ -26,8 +27,8 @@ const align = even ? "sm:text-right" : "text-left";
 
   <div class="sm:w-1/2">
     <div class="mx-auto h-full w-full overflow-hidden rounded-2xl">
-      <img
-        src={!!img ? img : "/MR.png"}
+      <Image
+        src={import('/src/images' + img)}
         alt=""
         class="h-full w-full object-cover object-center"
       />
