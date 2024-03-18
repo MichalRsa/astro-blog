@@ -12,8 +12,8 @@ export const MainSection = (): ReactElement => {
             for small business
           </h1>
           <p className="text-xl lg:text-3xl lg:mb-16 mb-2 max-[432px]:mb-[200px]">
-            I am a software developer with 4 years of experience that will
-            design, create and make your website fast and editable.
+            I am a software developer with 4 years of experience who will
+            design, create, and make your website fast and editable.
           </p>
           <div className="lg:mb-16 mb-2">
             <Button
