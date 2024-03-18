@@ -48,10 +48,12 @@
 }
 
 .dropdown {
-  translate: 0 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
   transition: translate var(--animation-timing);
 }
 
 .dropdown.active {
-  translate: 0 0;
+  translate: 0 -100%;
 }
