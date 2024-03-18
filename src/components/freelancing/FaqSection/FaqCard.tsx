@@ -37,7 +37,7 @@ export const FaqCard = ({ question, answer }: FaqCardProps): ReactElement => {
       className="animationHidden animationLeft shadow-xl bg-primary-200 rounded-3xl p-4 hover:bg-primary-400 focus-within:outline-none focus-within:ring focus-within:ring-primary-500"
     >
       <button
-        className="border-b-secondary-500 border-b-2 flex w-full justify-between items-center text-xl md:text-2xl pb-4 focus:outline-none"
+        className="min-h-[82px] border-b-secondary-500 border-b-2 flex w-full justify-between items-start text-xl md:text-2xl pb-4 focus:outline-none"
         onClick={() => {
           setIsOpen(!isOpen);
         }}
