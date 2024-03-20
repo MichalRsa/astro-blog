@@ -32,6 +32,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   <div class="sm:w-1/2">
     <div class="mx-auto h-full w-full overflow-hidden rounded-2xl">
       <Image
+        width={580}
+        height={340}
         src={images["/src/images" + img]()}
         alt=""
         class="h-full w-full object-cover object-center"

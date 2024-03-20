@@ -20,7 +20,7 @@ const options = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://michalrosa.dev",
   integrations: [mdx(), sitemap(), react(), tailwind()],
   markdown: {
     syntaxHighlight: false, // Disable syntax built-in syntax hightlighting from astro
