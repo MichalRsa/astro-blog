@@ -2,7 +2,7 @@
 title: "How to prepare for AWS developer associate exam"
 description: "As I earned my first cloud certification recently, I'm looking back at my approach with a fresh perspective and some valuable lessons. So, in this blog post, I'm going to take you through how I started, open up on what worked for me, and chat about the changes I'd make if I had to do it all over again."
 pubDate: "Oct 09 2023"
-heroImage: "/blog/aws-dev-badge.webp"
+heroImage: "/src/images/blog/aws-dev-badge.webp"
 imgAlt: "AWS developer badge"
 ---
 

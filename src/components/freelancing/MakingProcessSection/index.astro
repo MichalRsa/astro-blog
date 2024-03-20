@@ -1,0 +1,48 @@
+---
+import SectionTitle from "../../../components/SectionTitle.astro";
+import SectionWrapper from "../components/SectionWrapper.astro";
+import MakingProcessCard from "./MakingProcessCard.astro";
+
+const steps = [
+  {
+    img: "/sitemap.jpg",
+    title: "Understanding the business",
+    description:
+      "Let’s understand your business, who’s the customer and what’s your value proposition. Then make a plan about how we should make the website.",
+  },
+  {
+    img: "/figma-design.png",
+    title: "Figma Design",
+    description:
+      "Building the designs before an actual implementation gives us more place for experimenting and iterations. Let’s clearly see what we will achieve.",
+  },
+
+  {
+    img: "/headless-cms.png",
+    title: "Content in headless CMS",
+    description:
+      "Put the data of the website in a place where you will be able to easily change and modify its content like text, and images, or even add new pages.",
+  },
+
+  {
+    img: "/code.png",
+    title: "Coding a website",
+    description:
+      "Finally, it’s time to connect all the parts and build the real website.",
+  },
+];
+---
+
+<SectionWrapper bgColor="bg-secondary-700">
+  <SectionTitle animate title="Making process" color="primary" />
+  {
+    steps.map(({ img, title, description }, index) => (
+      <MakingProcessCard
+        img={img}
+        title={title}
+        description={description}
+        even={index % 2 === 0}
+      />
+    ))
+  }
+</SectionWrapper>

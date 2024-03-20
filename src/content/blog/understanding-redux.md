@@ -2,7 +2,7 @@
 title: "Understanding redux"
 description: "The common problem with redux is seeing the library as overcomplicated. The fact that is most commonly learned with React which also adds more complexity. Does not help in understanding how it works and how different parts of redux cooperate."
 pubDate: "Oct 23 2023"
-heroImage: "/blog/redux.webp"
+heroImage: "/src/images/blog/redux.webp"
 imgAlt: "Redux logo"
 ---
 

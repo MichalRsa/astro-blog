@@ -2,7 +2,7 @@
 title: "Understanding redux - Thunks and Middlewares"
 description: "Let's look at the concept of thunks and how to apply them with applyMiddleware method."
 pubDate: "Nov 10 2023"
-heroImage: "/blog/redux.webp"
+heroImage: "/src/images/blog/redux.webp"
 imgAlt: "Redux logo"
 ---
 

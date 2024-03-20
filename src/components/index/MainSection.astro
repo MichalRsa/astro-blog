@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import { Button } from "../../components/Button";
+import { data } from "../../consts.ts";
+import type { ImageMetadata } from "astro";
+
+const icons = data.favIcons;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/tech-icons/*.{jpeg,jpg,png,webp}",
+);
+---
+
+<section
+  class="z-10 flex max-w-full flex-col self-stretch max-[540px]:mr-[-140px]"
+>
+  <div
+    class="mr-[-150px] rounded-3xl bg-secondary-700 p-2 md:min-w-[276px] md:p-8 md:pr-6 lg:mr-0 lg:min-w-[460px]"
+  >
+    <h1 class="mb-2 text-2xl text-primary-500 lg:mb-8 lg:text-5xl">
+      Hi! I'm <br />
+      Michał Rosa
+    </h1>
+    <p class="text-md mb-2 text-ternary-50 lg:text-xl">
+      I make web apps with <br />
+      modern frontend frameworks and node.js
+    </p>
+  </div>
+  <div
+    class="flex-center flex flex-1 flex-col rounded-3xl max-md:p-4 max-[540px]:ml-2 max-[540px]:mt-2 max-[540px]:bg-primary-200 max-[540px]:bg-opacity-90"
+  >
+    <p class="pt-2 text-center text-xl max-[400px]:text-lg md:pt-8 lg:text-3xl">
+      If you need developer for
+    </p>
+    <ul class="flex flex-wrap items-center justify-center">
+      {
+        icons.map((icon) => (
+          <li class="basis-[36%]">
+            <div class="m-auto w-24 px-4 py-2 md:w-28 md:px-8 md:py-4 lg:w-36">
+              <Image
+                loading="eager"
+                src={images[icon.src]()}
+                alt={`${icon.alt} icon`}
+                title={`${icon.alt} icon`}
+                class="object-cover"
+              />
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+    <div
+      class="bottom-36 right-12 flex grow items-center justify-center max-sm:absolute max-[340px]:bottom-4 max-[340px]:right-2"
+    >
+      <Button
+        href="/contact-me"
+        type="primary"
+        text="Contact me!"
+        fontSize="max-md:text-md"
+        withShadow
+      />
+    </div>
+  </div>
+</section>

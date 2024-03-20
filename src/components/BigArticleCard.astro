@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+type BlogData = Omit<CollectionEntry<"blog">["data"], "updatedDate">;
+
+export interface ArticleCardProps extends BlogData {
+  slug: CollectionEntry<"blog">["slug"];
+}
+
+const { heroImage, slug, title, pubDate, description, imgAlt } = Astro.props;
+
+const date = pubDate.toString().substring(0, 15);
+const absoluteSlug = `/blog/${slug}`;
+---
+
+<article class="pt-14 md:flex md:h-screen md:pt-0">
+  <a
+    class="flex flex-col md:container md:my-auto md:h-96 md:max-w-6xl md:flex-row"
+    href={absoluteSlug}
+  >
+    <div class="w-full overflow-hidden rounded-2xl md:w-7/12">
+      <Image class="h-full w-full object-cover" src={heroImage} alt={imgAlt} />
+    </div>
+    <div class="justify flex w-full flex-col p-8 md:w-5/12">
+      <p class="pb-4 text-xs font-thin">{date}</p>
+      <h2 class="pb-8 text-lg font-bold md:text-4xl">{title}</h2>
+      <p class="test-base pb-8 font-light">{description}</p>
+    </div>
+  </a>
+</article>

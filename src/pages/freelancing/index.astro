@@ -1,0 +1,22 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import  MainSection  from "@components/freelancing/MainSection.astro";
+import { TITLE, DESCRIPTION } from "../../consts.ts";
+import ExperienceSection from "@components/freelancing/ExperienceSection/index.astro";
+import DesignCodingSection from "@components/freelancing/DesignCodingSection.astro";
+import MakingProcessSection from "@components/freelancing/MakingProcessSection/index.astro";
+import FaqSection from "@components/freelancing/FaqSection/index.astro";
+import CallToActionSection from "@components/freelancing/CallToActionSection.astro";
+
+const title = TITLE.FREELANCING;
+const description = DESCRIPTION.FREELANCING;
+---
+
+<MainLayout title={title} description={description}>
+  <MainSection />
+  <DesignCodingSection />
+  <ExperienceSection />
+  <MakingProcessSection />
+  <FaqSection />
+  <CallToActionSection />
+</MainLayout>

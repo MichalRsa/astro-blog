@@ -1,0 +1,38 @@
+---
+import SectionTitle from "../../components/SectionTitle.astro";
+import SectionWrapper from "../freelancing/components/SectionWrapper.astro";
+import { data } from "../../consts.ts";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+const icons = data.socialIcons;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/*.{jpeg,jpg,png,webp}",
+);
+---
+
+<div>
+  <SectionWrapper bgColor="bg-ternary-200">
+    <SectionTitle underlineFullWidth color="secondary" title="Reach me out" />
+
+    <ul class="flex flex-wrap justify-center">
+      {
+        icons.map((icon) => (
+          <li class="sm:m-2 ">
+            <a target="_blank" href={icon.link} rel="noreferrer">
+              <div class="flex h-full items-center rounded-3xl px-12 py-8 hover:bg-primary-500 hover:bg-opacity-20">
+                <Image
+                  src={images[`/src/images/${icon.src}`]()}
+                  alt={`${icon.alt} icon`}
+                  title={icon.alt}
+                  class="w-8 object-cover md:w-12"
+                />
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </SectionWrapper>
+</div>

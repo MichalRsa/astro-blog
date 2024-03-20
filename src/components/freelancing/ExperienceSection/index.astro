@@ -1,0 +1,84 @@
+---
+import SectionTitle from "../../../components/SectionTitle.astro";
+import SectionWrapper from "../components/SectionWrapper.astro";
+import ExperienceCard from "./ExperienceCard.astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/*.{jpeg,jpg,png,webp}",
+);
+
+const companies = [
+  {
+    img: "/src/images/skygate.webp",
+    companyName: "Skygate",
+    specialization: "Fullstack developer",
+    technologies: [
+      "TypeScript",
+      "Vue.js",
+      "Node.js",
+      "PostgreSQL",
+      "TypeORM",
+      "Jest",
+      "React",
+      "React Bootstrap",
+      "Formik",
+      "Material UI",
+      "React Router",
+      "CSS Modules",
+      "Docker",
+      "Google Cloud",
+      "Firebase",
+    ],
+  },
+  {
+    img: "/src/images/bh-logo.png",
+    companyName: "Brainhub",
+    specialization: "Frontend developer",
+
+    technologies: [
+      "TypeScript",
+      "Vite.js",
+      "React",
+      "Material UI",
+      "React Query",
+      "React Router",
+      "CoureUI",
+      "Formik",
+    ],
+  },
+
+  {
+    img: "/src/images/bejamas-logo.jpeg",
+    companyName: "Bejamas",
+    specialization: "Frontend developer",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Contentful",
+      "Storyblok",
+      "Netlify",
+      "Vercel",
+    ],
+  },
+];
+---
+
+<SectionWrapper bgColor="bg-ternary-200">
+  <SectionTitle animate title="Here I gained professional experience" />
+  <div
+    class="flex justify-between gap-8 overflow-x-auto p-12 max-xl:-mx-12 max-md:-mx-4 max-md:pl-2"
+  >
+    {
+      companies.map(({ img, companyName, specialization, technologies }) => (
+        <ExperienceCard
+          img={images[img]()}
+          title={companyName}
+          subTitle={specialization}
+          list={technologies}
+        />
+      ))
+    }
+  </div>
+</SectionWrapper>

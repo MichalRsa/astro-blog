@@ -1,0 +1,54 @@
+---
+import SectionTitle from "../../../components/SectionTitle.astro";
+import SectionWrapper from "../components/SectionWrapper.astro";
+import { FaqCard } from "./FaqCard";
+
+const questions = [
+  {
+    question: "What services do you offer as a designer software developer?",
+    answer:
+      "I offer a comprehensive service encompassing the entire website development process. From crafting designs using tools like Figma to coding with JAM Stack technologies such as Astro.js or Next.js, and finally, deploying the website using CDN hosting services like Netlify.",
+  },
+  {
+    question: "How do you approach a new project or client collaboration?",
+    answer:
+      "I believe in active client participation throughout the development process. Clients have the opportunity to make decisions at every step, ensuring that the final product aligns with their vision and needs.",
+  },
+  {
+    question:
+      "What programming languages and design tools do you specialize in?",
+    answer:
+      "I specialize in software development using Astro.js or Next.js, and for design, I chose Figma to create interfaces.",
+  },
+  {
+    question: "Can you walk me through your design and development process?",
+    answer:
+      "Our process begins with understanding the client's needs and defining the website's content and structure. After that, I create designs in Figma for client review and feedback. Once approved, I proceed to code the website and deploy it on the chosen hosting service.",
+  },
+  {
+    question: "How do you handle feedback and revisions during a project?",
+    answer:
+      "We engage in multiple iterations during the UX/UI design phase, ensuring that the final product meets the client's expectations and objectives.",
+  },
+  {
+    question:
+      "Do you provide ongoing support and maintenance after the project is completed?",
+    answer:
+      "Yes, despite static website will need minimal maintance, I offer ongoing support and maintenance services to ensure that the website continues to perform optimally post-deployment.",
+  },
+];
+---
+
+<SectionWrapper bgColor="bg-ternary-200">
+  <SectionTitle animate title="Frequently Asked Questions" />
+
+  <div class="box-border lg:flex lg:flex-wrap lg:gap-12">
+    {
+      questions.map((faq) => (
+        <div class="box-border max-lg:my-8 lg:w-[calc(50%-26px)] ">
+          <FaqCard question={faq.question} answer={faq.answer} client:idle />
+        </div>
+      ))
+    }
+  </div>
+</SectionWrapper>

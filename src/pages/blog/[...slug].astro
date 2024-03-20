@@ -1,8 +1,9 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import { Comments } from "../../components/Comments.tsx";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { TITLE } from "../../consts";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -17,22 +18,26 @@ const post = Astro.props;
 const { Content } = await post.render();
 
 const title = TITLE.BLOG_POST(post.data.title);
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/blog/*.{jpeg,jpg,png,webp}",
+);
 ---
 
 <MainLayout title={title} description={post.data.description}>
   <div>
     <article>
       <div
-        class="prose prose-pre:p-0 prose-pre:py-4 container mx-auto lg:max-w-screen-md p-2"
+        class="container prose mx-auto p-2 prose-pre:p-0 prose-pre:py-4 lg:max-w-screen-md"
       >
         <header>
           <div class="flex pt-16">
-            <div class="flex flex-col my-auto w-full h-4/6">
-              <h2 class="text-4xl font-bold pt-8 pl-0.5">{post.data.title}</h2>
+            <div class="my-auto flex h-4/6 w-full flex-col">
+              <h2 class="pl-0.5 pt-8 text-4xl font-bold">{post.data.title}</h2>
               <div class="overflow-hidden rounded-2xl">
-                <img
+                <Image
                   class="h-full w-full object-cover"
-                  src={post.data.heroImage}
+                  src={images[post.data.heroImage]()}
                   alt={post.data.imgAlt}
                 />
               </div>

@@ -1,0 +1,15 @@
+---
+import clsx from "clsx";
+
+interface Props {
+  bgColor: "bg-secondary-700" | "bg-ternary-200";
+}
+
+const { bgColor } = Astro.props;
+---
+
+<section class={clsx(bgColor, "md:p-12 py-8 px-2")}>
+  <div class="mx-auto max-w-7xl">
+    <slot />
+  </div>
+</section>

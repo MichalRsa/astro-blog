@@ -1,0 +1,14 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ContactMeSection from "@components/index/ContactMeSection.astro";
+import CtaContactMe from "@components/contact-me/CtaContactMe.astro";
+import { DESCRIPTION, TITLE } from "src/consts";
+
+const title = TITLE.CONTACT_ME;
+const description = DESCRIPTION.CONTACT_ME;
+---
+
+<MainLayout title={title} description={description}>
+  <CtaContactMe />
+  <ContactMeSection />
+</MainLayout>

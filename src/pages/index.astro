@@ -1,29 +1,32 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
-import { MainSection } from "./index/MainSection.tsx";
-import { ContactSection } from "./index/ContactSection.tsx";
-import { AboutMeSection } from "./index/AboutMeSection.tsx";
-import { data, TITLE, DESCRIPTION } from "../consts.ts";
-import { Timeline } from "./index/Timeline.jsx";
+import MainSection from "@components/index/MainSection.astro";
+import AboutMeSection from "@components/index/AboutMeSection.astro";
+import ExperienceSection from "@components/freelancing/ExperienceSection/index.astro";
+import { TITLE, DESCRIPTION } from "../consts.ts";
+import SectionWrapper from "@components/freelancing/components/SectionWrapper.astro";
+import ContactMeSection from "@components/index/ContactMeSection.astro";
+import Myself from "@images/myself.webp";
 
 const title = TITLE.HOME;
 const description = DESCRIPTION.HOME;
 ---
 
 <MainLayout title={title} description={description}>
-  <div class="mx-auto 2xl:px-72 sm:px-24 md:px-12 px-2 text-gray-600">
+  <SectionWrapper bgColor="bg-ternary-200">
     <div
-      class="md:h-screen md:min-h-[840px] items-start flex md:flex-row flex-col sm:py-24 pt-24 pb-16 gap-x-4 justify-center"
+      class="relative left-0 flex flex-row items-start justify-center gap-x-4 pb-16 lg:pt-8"
     >
-      <MainSection favIcons={data.favIcons} />
+      <MainSection />
       <div
-        class="md:max-w-lg rounded-3xl overflow-hidden self-end lg:min-w-[512px]"
+        class="mt-8 self-end overflow-hidden rounded-3xl max-[340px]:scale-150 md:max-w-lg lg:min-w-[512px]"
       >
-        <img class="object-cover" src="/myself.webp" alt="" />
+        <Image loading="eager" src={Myself} alt="" />
       </div>
     </div>
-    <AboutMeSection />
-    <Timeline />
-    <ContactSection socialIcons={data.socialIcons} />
-  </div>
+  </SectionWrapper>
+  <AboutMeSection />
+  <ExperienceSection />
+  <ContactMeSection />
 </MainLayout>
