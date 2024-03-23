@@ -6,20 +6,18 @@ const { measurementId } = Astro.props as Props;
 <script
   type="text/partytown"
   src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-
-<script type="text/partytown" is:inline>
+<script
+  type="text/partytown"
+  data-ga-measurement-id={measurementId}
+  id="ga-init"
+>
+  const measurementId = document
+    .getElementById("ga-init")
+    .getAttribute("data-ga-measurement-id");
   window.dataLayer = window.dataLayer || [];
   function gtag() {
-    dataLayer.push(arguments);
+    dataLayer.push(arguments); // eslint-disable-line
   }
-</script>
-<script type="text/partytown" is:inline>
-  document.addEventListener(
-    "astro:page-load",
-    () => {
-      gtag("js", new Date());
-      gtag("config", measurementId);
-    },
-    { once: false },
-  );
+  gtag("js", new Date());
+  gtag("config", measurementId);
 </script>
