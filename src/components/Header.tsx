@@ -34,6 +34,7 @@ export const Header = (): ReactElement => {
           </a>
           {isMobile && (
             <button
+              aria-label="open navigation menu"
               className={clsx("hamburger-menu", showMobileMenu && "active")}
               onClick={() => {
                 handleClick();
