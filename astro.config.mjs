@@ -30,7 +30,7 @@ export default defineConfig({
     sitemap(),
     react(),
     tailwind(),
-    partytown({ config: { forward: ["dataLayer.push"] } }),
+    // partytown({ config: { forward: ["dataLayer.push"] } }),
   ],
   markdown: {
     syntaxHighlight: false,
