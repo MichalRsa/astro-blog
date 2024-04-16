@@ -21,9 +21,11 @@ imgAlt: "Redux logo"
 
 ## Introduction
 
+This article was written after not passing the task during the recruitment. The fact is that Redux is not used as broadly as before but yet required in many job offers. I hope this tutorial will help me and maybe someone else to quickly refresh the principles behind Redux.
+
 The common problem with redux is seeing the library as overcomplicated. The fact that is most commonly learned with React which also adds more complexity. Does not help in understanding how it works and how different parts of redux cooperate.
 
-**In a series of tutorials, we will build up the understanding by starting with the bare redux package**. We will first use its API without the framework and then add React.
+**In a series of tutorials, we will build up the understanding by building with the bare redux package**. We will use its API without the framework.
 
 You probably may know that **redux beside react-redux has its stand-alone package redux**. It means that redux core is just a javascript library. It means **you can run it anywhere you want either node app or web browser**. The key to getting things in order is to understand the core library and then use it in our app.
 
