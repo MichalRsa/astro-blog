@@ -1,23 +1,19 @@
 ---
 import { Button } from "../../components/Button";
 import SectionWrapper from "@components/freelancing/components/SectionWrapper.astro";
-import Myself from "@images/myself.webp";
+import Myself from "@images/profile_pic.png";
 import { Image } from "astro:assets";
 ---
 
 <SectionWrapper bgColor="bg-ternary-200">
-  <div
-    class="flex items-center justify-center gap-x-4 pb-16 lg:py-16"
-  >
-    <div
-      class="z-10 rounded-3xl max-lg:max-w-sm max-md:mr-[-150px] max-md:self-end max-md:bg-ternary-400 max-md:p-4 max-md:pl-4 max-sm:mr-[-320px] sm:min-w-[276px] md:p-8 md:pr-6 lg:min-w-[460px]"
-    >
-      <h1 class="mb-2 text-2xl lg:mb-16 lg:text-5xl">
+  <div class="flex flex-col sm:flex-row sm:gap-8 lg:py-16">
+    <div class="relative z-10 sm:w-1/2">
+      <h1 class="mb-6 text-2xl lg:mb-16 lg:text-5xl">
         Creating appealing websites
         <br />
         for small business
       </h1>
-      <p class="mb-2 text-xl max-md:text-base lg:mb-16 lg:text-2xl">
+      <p class="mb-6 text-xl max-md:text-base lg:mb-16 lg:text-2xl">
         I am a software developer with 4 years of experience who will design,
         create, and make your website fast and editable.
       </p>
@@ -29,10 +25,15 @@ import { Image } from "astro:assets";
         />
       </div>
     </div>
-    <div
-      class="self-start overflow-hidden rounded-3xl max-[340px]:scale-125 md:mt-8 md:max-w-lg md:self-end lg:min-w-[512px]"
-    >
-      <Image loading="eager" src={Myself} alt="" />
+    <div class="max-sm:mx-auto max-sm:-mr-24 max-sm:-mt-16 sm:w-1/2">
+      <Image
+        widths={[300, 624]}
+        sizes='(max-width: 640px) 300px, 624px'
+        loading="eager"
+        src={Myself}
+        alt=""
+        class="min-w-[300px] max-sm:w-[300px] rounded-3xl sm:w-full"
+      />
     </div>
   </div>
 </SectionWrapper>
