@@ -11,9 +11,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 );
 ---
 
-<section
-  class="z-10 flex max-w-full flex-col self-stretch max-[540px]:mr-[-140px]"
->
+<section class="grow z-10 flex max-w-full flex-col self-stretch">
   <div
     class="mr-[-150px] rounded-3xl bg-secondary-700 p-2 md:min-w-[276px] md:p-8 md:pr-6 lg:mr-0 lg:min-w-[460px]"
   >
@@ -27,16 +25,16 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     </p>
   </div>
   <div
-    class="flex-center flex flex-1 flex-col rounded-3xl max-md:p-4 max-[540px]:ml-2 max-[540px]:mt-2 max-[540px]:bg-primary-200 max-[540px]:bg-opacity-90"
+    class="flex-center flex flex-1 flex-col rounded-3xl max-sm:justify-center max-md:pr-4 max-[540px]:mt-2"
   >
-    <p class="pt-2 text-center text-xl max-[400px]:text-lg md:pt-8 lg:text-3xl">
+    <p class="pt-2 text-center text-xl max-[400px]:text-base md:pt-8 lg:text-3xl">
       If you need developer for
     </p>
-    <ul class="flex flex-wrap items-center justify-center">
+    <ul class="flex max-sm:flex-col sm:flex-wrap items-center justify-center">
       {
         icons.map((icon) => (
           <li class="basis-[36%]">
-            <div class="m-auto w-24 px-4 py-2 md:w-28 md:px-8 md:py-4 lg:w-36">
+            <div class="m-auto w-16 px-4 py-2 md:w-28 md:px-8 md:py-4 lg:w-36 ">
               <Image
                 loading="eager"
                 quality="low"
@@ -53,7 +51,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       }
     </ul>
     <div
-      class="bottom-36 right-12 flex grow items-center justify-center max-sm:absolute max-[340px]:bottom-4 max-[340px]:right-2"
+      class="bottom-36 left-36 flex grow items-center justify-center max-sm:absolute max-[340px]:bottom-4 max-[340px]:right-2"
     >
       <Button
         href="/contact-me"
