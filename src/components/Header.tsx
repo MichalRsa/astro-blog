@@ -7,10 +7,10 @@ const links = [
     label: "about me",
     url: "/",
   },
-  {
-    label: "freelancing",
-    url: "/freelancing",
-  },
+  // {
+  //   label: "freelancing",
+  //   url: "/freelancing",
+  // },
   {
     label: "blog",
     url: "/blog",
