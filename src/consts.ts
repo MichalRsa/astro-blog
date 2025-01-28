@@ -1,7 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-const BASE_TITLE = "Michał Rosa Frontend developer | ";
+const BASE_TITLE = "Michał Rosa Fullstack developer | ";
 
 export const TITLE = {
   HOME: BASE_TITLE + "Home",
@@ -13,7 +13,7 @@ export const TITLE = {
 };
 
 export const DESCRIPTION = {
-  HOME: "Michał Rosa - Frontend developer, with commercial experience in making web apps using technologies like React.js, Node.js, and Express.js",
+  HOME: "Michał Rosa - Fullstack developer, with commercial experience in making web apps using technologies like React.js, Node.js, and Express.js",
   BLOG: "Welcome to my blog! As a web developer proficient in JavaScript, TypeScript, React.js and Node.js. I share insightful articles, tutorials, and tips on these topics.",
   FREELANCING:
     "I build custom, responsive, acessible and editable webistes for small business.",

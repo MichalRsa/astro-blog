@@ -1,38 +1,14 @@
 ---
-import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
-import MainSection from "@components/index/MainSection.astro";
-import AboutMeSection from "@components/index/AboutMeSection.astro";
 import ExperienceSection from "@components/freelancing/ExperienceSection/index.astro";
 import { TITLE, DESCRIPTION } from "../consts.ts";
-import SectionWrapper from "@components/freelancing/components/SectionWrapper.astro";
 import ContactMeSection from "@components/index/ContactMeSection.astro";
-import Myself from "@images/profile_pic.png";
 
 const title = TITLE.HOME;
 const description = DESCRIPTION.HOME;
 ---
 
 <MainLayout title={title} description={description}>
-  <SectionWrapper bgColor="bg-ternary-200">
-    <div
-      class="relative flex flex-row items-start justify-center sm:gap-x-4 pb-16 lg:pt-8"
-    >
-      <MainSection />
-      <div
-        class="max-[500px]:mr-[-140px] max-lg:mt-24 min-w-[300px] self-end overflow-hidden rounded-3xl md:max-w-lg lg:min-w-[512px]"
-      >
-          <Image
-            loading="eager"
-            src={Myself}
-            alt=""
-            width={1000}
-            height={1400}
-          />
-      </div>
-    </div>
-  </SectionWrapper>
-  <AboutMeSection />
   <ExperienceSection />
   <ContactMeSection />
 </MainLayout>
